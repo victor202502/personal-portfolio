@@ -1,0 +1,810 @@
+body {
+    background-color: #000;
+    color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.navbar {
+    background-color: #333;
+}
+
+.navbar .nav-link {
+    color: #f4f4f4 !important;
+}
+
+.navbar .nav-link:hover {
+    color: #f1c40f !important;
+}
+/* Estilo para el navbar flotante */
+nav.navbar {
+    transition: top 0.3s;
+}
+/* Estilo para la navbar activa */
+.navbar-nav .nav-link.active {
+    color: #f1c40f !important;  /* El color que desees, en este caso amarillo */
+    font-weight: bold;  /* Poner el texto en negrita */
+    border-bottom: 2px solid #f1c40f;  /* Barra de subrayado debajo del enlace */
+}
+
+/* Opcional: color por defecto de las nav-links */
+.navbar-nav .nav-link {
+    color: white !important;
+}
+
+
+/* Navbar flotante */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030; /* Asegúrate de que esté encima del contenido */
+}
+
+/* Botón de idioma con fondo amarillo */
+.nav-item .dropdown-toggle {
+    background-color: #f1c40f;  /* Fondo amarillo */
+    color: black !important;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Cambio del fondo del dropdown cuando se abre */
+.nav-item .dropdown-menu {
+    background-color: #f1c40f;  /* Fondo amarillo del menú desplegable */
+}
+/* Evitar que el botón de idioma cambie como los demás enlaces */
+.navbar-nav .nav-item .dropdown-toggle {
+    background-color: #f1c40f; /* Color de fondo */
+    color: black; /* Color del texto */
+    font-weight: bold;
+    padding: 8px 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Cambio de color al hacer hover solo en el botón de idioma */
+.navbar-nav .nav-item .dropdown-toggle:hover {
+    background-color: #b49b36; /* Cambia a naranja al pasar el mouse */
+    color: black!important;
+}
+
+
+
+/* Cambiar color de los elementos del menú desplegable */
+.navbar-nav .dropdown-menu .dropdown-item {
+    color: black; /* Texto en negro */
+}
+
+/* Cambiar color de los elementos del menú desplegable al pasar el mouse */
+.navbar-nav .dropdown-menu .dropdown-item:hover {
+    background-color: orange; /* Fondo naranja al pasar el mouse */
+    color: white;
+}
+
+
+.nav-item .dropdown-menu .dropdown-item {
+    background-color: #f1c40f;  /* Fondo amarillo de los ítems */
+    color: black !important;  /* Texto negro */
+}
+
+.nav-item .dropdown-menu .dropdown-item:hover {
+    background-color: #b49b36;  /* Color de fondo cuando se pasa el mouse sobre el ítem */
+}
+
+/*home section*/
+
+
+section {
+    padding: 60px 20px;
+    margin-bottom: 20px;
+}
+
+
+#carouselExample .carousel-control-prev,
+#carouselExample .carousel-control-next {
+    top: 80%; /* Baja las flechas hacia abajo */
+    transform: translateY(-50%);
+}
+
+
+#carouselExample .carousel-control-prev,
+#carouselExample .carousel-control-next {
+    opacity: 0; /* Oculta las flechas por defecto */
+    transition: opacity 0.3s ease-in-out;
+}
+
+#carouselExample:hover .carousel-control-prev,
+#carouselExample:hover .carousel-control-next {
+    opacity: 1; /* Muestra las flechas solo al pasar el mouse */
+}
+
+
+
+.carousel-item img {
+    max-height: 500px; /* Altura máxima de las imágenes */
+    object-position: center; /* Centra la imagen si hay recorte */
+    max-width: fit-content;
+}
+
+
+
+/* Espaciado del texto para centrar mejor */
+#home .carousel-item h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Alinear imágenes y aplicar sombra */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Efecto al pasar el ratón */
+.resume-item:hover {
+    background-color: #f8f9fa; /* Color suave al hacer hover */
+    border-color: #ffc107; /* Borde amarillo */
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Efecto hover en párrafos individuales con imágenes */
+.image-hover {
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.image-hover:hover {
+    color: #ffc107;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+
+
+#skills .skill {
+    color: #fff;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+.bar {
+    background-color: #444;
+    height: 10px;
+    width: 100%;
+}
+
+.progress {
+    height: 100%;
+}
+
+/* Estilos generales de los proyectos */
+.project {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 300px; /* Altura uniforme */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto hover */
+.project:hover {
+    transform: scale(1.05);
+}
+
+/* Capa de superposición con texto */
+.project-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 15px 25px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Efecto hover en overlay */
+.project:hover .project-overlay {
+    background: rgba(255, 193, 7, 0.8); /* Amarillo Bootstrap */
+}
+
+
+footer {
+    background-color: #222;
+    color: #bbb;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+footer ul li a {
+    color: #bbb;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    color: #f1c40f;
+}
+
+/* Estilos generales */
+.contact-item {
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Tamaño y color de los iconos */
+.contact-item .icon {
+    font-size: 4rem; /* Tamaño más grande */
+    margin-bottom: 10px;
+    color: #ffc107; /* Amarillo Bootstrap */
+}
+
+/* Texto */
+.contact-item .text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffc107;
+}
+
+/* Efecto hover */
+.contact-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    background: #ffc107;
+    color: white;
+}
+
+.contact-item:hover .icon {
+    color: white; /* Cambiar color del icono en hover */
+}
+.contact-item:hover .text {
+    color: white; /* Cambiar color del icono en hover */
+}
+
+.copy-message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#contact-form {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#contact-form label {
+    color: black;
+}
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #444;
+    border: none;
+    color: #fff;
+}
+
+#contact-form button {
+    background-color: #f1c40f;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#contact-form button:hover {
+    background-color: #e67e22;
+}
+/* Estilos del formulario */
+#contact-form {
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+/* Input y textarea */
+#contact-form .form-control {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* Placeholder con color gris */
+#contact-form .form-control::placeholder {
+    color: #888;
+}
+
+/* Estilo del botón */
+#contact-form .btn-warning {
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Hover en el botón */
+#contact-form .btn-warning:hover {
+    background: #e0a800;
+    color: #fff;
+}
+
+/* Efecto sombra en la tarjeta */
+.card {
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* estilo para los */
+
+
+/* Enlace */
+.custom-link {
+    font-size: 1.1rem;
+    color: #ffc107; /* Amarillo */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.custom-link:hover {
+    color: #ffca2c; /* Amarillo más brillante */
+    text-decoration: underline;
+}
+
+/* Estilo para el botón Copy */
+.btn-outline-primary {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin-top: 10px;
+    border: 1px solid #ffc107; /* Borde amarillo */
+    color: #ffc107;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    background-color: transparent;
+}
+
+.btn-outline-primary:hover {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin-top: 10px;
+    border: 1px solid #ffc107; /* Borde amarillo */
+    color: #444;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    background-color: #ffc107;
+}
+
+
+/* Estilo para la ventana modal */
+.modal-content {
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: #343a40; /* Fondo oscuro de la modal */
+    color: #f8f9fa; /* Texto blanco */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+border-radius: 10px;    background-color: #212121; /* Fondo oscuro en el encabezado */
+    color: #ffc107; /* Título en amarillo */
+}
+
+
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+
+
+
+/* Asegura que el carrusel ocupe todo el ancho de la pantalla */
+#carouselExample {
+    width: 100vw; /* 100% del ancho de la ventana */
+    margin-left: calc(-50vw + 50%); /* Centra el carrusel en pantalla */
+}
+
+.carousel-item .col-md-6.text-center.text-md-start {
+    padding: 0 50px; /* Añadir algo de espacio al lado */
+}
+
+
+
+
+/* Ajuste para pantallas pequeñas: las imágenes se ajustan al tamaño de la pantalla */
+@media (min-width: 1400px) {
+    .carousel-item .col-md-6.text-center.text-md-start {
+        padding: 0 300px; /* Añadir algo de espacio al lado */
+    }
+}
+
+
+.job-item {
+    height: 200px;
+    position: relative; /* For absolute positioning of the white background */
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    color: black;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #888888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.job-item:hover {
+    transform: scale(1.05);
+}
+
+.job-item-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white; /* Set white background */
+    z-index: 0; /* Behind the image */
+}
+
+
+.job-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3; /* Lighter appearance through transparency */
+    z-index: 1;   /* On top of the white background, behind the text */
+    filter: brightness(1.4); /* Increase brightness */
+}
+
+.job-item-text {
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: black;
+    position: relative; /* So the text is above the transparent image */
+    z-index: 2; /*Ensure it's on top of everything */
+}
+
+/* Modal Styles (Rest of the CSS - from previous answers) */
+/* IMPORTANT - Keep Modal Styles for proper functionality */
+.modal-content {
+    color: black;
+    border-radius: 10px;
+    position: relative;
+}
+
+.modal-body ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.modal-body li {
+    margin-bottom: 0.5em;
+}
+
+
+
+
+/* NEW CSS FOR SPECIFIC MODAL HEADER STYLE */
+.custom-job-modal .modal-header {
+    border-radius: 10px 10px 0 0;
+    background-color: #212121;
+    color: #ffc107;
+    border-bottom: 1px solid #ffc107;
+}
+
+.custom-job-modal .modal-title {
+    color: #ffc107;
+}
+
+.custom-job-modal .btn-close {
+    color: #000;
+    background-color: #fff;
+}
+
+
+/* Background Image Assignments - Pseudo-element */
+.job-item-xella::before,
+#job1Modal .modal-content::before {
+    background-image: url('../images/xella.jpg');
+}
+
+.job-item-reso::before,
+#job2Modal .modal-content::before {
+    background-image: url('../images/reso.jpg');
+}
+
+.job-item-markilux::before,
+#job3Modal .modal-content::before {
+    background-image: url('../images/markilux_logo.png');
+}
+
+.job-item-worms::before,
+#job4Modal .modal-content::before {
+    background-image: url('../images/Firmenlogo-frei_m.webp');
+}
+
+.job-item-eptisa::before,
+#job5Modal .modal-content::before {
+    background-image: url('../images/eptisa.jpg');
+}
+
+.job-item-viten::before,
+#job6Modal .modal-content::before {
+    background-image: url('../images/viten.png');
+}
+
+.job-item-verino::before,
+#job7Modal .modal-content::before {
+    background-image: url('../images/verino.png');
+}
+
+
+
+
+
+
+/* Styles for xella modal*/
+#job1Modal .modal-content {
+    color: black;
+    border-radius: 10px;
+}
+
+#job1Modal .modal-body {
+    position: relative; /* Needed for the pseudo-element */
+    z-index: 1; /* Ensure the content is above the pseudo-element */
+    color: black; /* Ensure the text is black and not affected by opacity */
+}
+
+#job1Modal .modal-body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/xella.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+ .job-item-xella{
+    background-color: white;}
+
+/* Styles for reso modal*/
+#job2Modal .modal-content {
+    color: black;
+    border-radius: 10px;
+}
+
+#job2Modal .modal-body {
+    position: relative; /* Needed for the pseudo-element */
+    z-index: 1; /* Ensure the content is above the pseudo-element */
+    color: black; /* Ensure the text is black and not affected by opacity */
+}
+
+#job2Modal .modal-body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/reso.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+ .job-item-reso{
+    background-color: white;}
+
+/* Styles for markilux modal*/
+#job3Modal .modal-content {
+    color: black;
+    border-radius: 10px;
+}
+
+#job3Modal .modal-body {
+    position: relative; /* Needed for the pseudo-element */
+    z-index: 1; /* Ensure the content is above the pseudo-element */
+    color: black; /* Ensure the text is black and not affected by opacity */
+}
+
+#job3Modal .modal-body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/markilux_logo.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+ .job-item-markilux{
+    background-color: white;}
+
+/* Styles for worms modal*/
+#job4Modal .modal-content {
+    color: black;
+    border-radius: 10px;
+}
+
+#job4Modal .modal-body {
+    position: relative; /* Needed for the pseudo-element */
+    z-index: 1; /* Ensure the content is above the pseudo-element */
+    color: black; /* Ensure the text is black and not affected by opacity */
+}
+
+#job4Modal .modal-body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/Firmenlogo-frei_m.webp');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+ .job-item-worms{
+    background-color: white;}
+
+/* Styles for eptisa modal*/
+#job5Modal .modal-content {
+    color: black;
+    border-radius: 10px;
+}
+
+#job5Modal .modal-body {
+    position: relative; /* Needed for the pseudo-element */
+    z-index: 1; /* Ensure the content is above the pseudo-element */
+    color: black; /* Ensure the text is black and not affected by opacity */
+}
+
+#job5Modal .modal-body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/eptisa.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+ .job-item-eptisa{
+    background-color: white;}
+
+/* Styles for viten modal*/
+#job6Modal .modal-content {
+    color: black;
+    border-radius: 10px;
+}
+
+#job6Modal .modal-body {
+    position: relative; /* Needed for the pseudo-element */
+    z-index: 1; /* Ensure the content is above the pseudo-element */
+    color: black; /* Ensure the text is black and not affected by opacity */
+}
+
+#job6Modal .modal-body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/viten.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+ .job-item-viten{
+    background-color: white;}
+
+/* Styles for verino modal*/
+#job7Modal .modal-content {
+    color: black;
+    border-radius: 10px;
+}
+
+#job7Modal .modal-body {
+    position: relative; /* Needed for the pseudo-element */
+    z-index: 1; /* Ensure the content is above the pseudo-element */
+    color: black; /* Ensure the text is black and not affected by opacity */
+}
+
+#job7Modal .modal-body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/verino.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+ .job-item-verino{
+    background-color: white;}
+
+
+    #imageOverlay {
+        display:none;}

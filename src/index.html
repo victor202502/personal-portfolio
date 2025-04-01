@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Personal</title>
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto w-100 d-flex justify-content-around">
+                        <li class="nav-item"><a class="nav-link" href="#home" data-lang-key="home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about" data-lang-key="about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#resume" data-lang-key="resume">Resume</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#jobexperience"
+                                data-lang-key="jobexperience">Job experience</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#skills" data-lang-key="skills">Skills</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#projects"
+                                data-lang-key="projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact" data-lang-key="contact">Contact</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle btn btn-warning" href="#" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                data-lang-key="language">
+                                Language
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#" onclick="changeLanguage('es')">Español</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="changeLanguage('en')">English</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="changeLanguage('de')">Deutsch</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section id="home" class="container my-5 vh-100">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="row align-items-center">
+                        <!-- Texto -->
+                        <div class="col-12 col-md-6 text-center text-md-start">
+                            <h1 class="fw-bold" data-lang-key="hello">Hello, I'm Víctor Salgado</h1>
+                            <p data-lang-key="homeDescription">I'm currently looking for an internship to complete my training as a Fachinformatiker Anwendungsentwicklung...</p>
+                        </div>
+                        <!-- Imagen -->
+                        <div class="col-12 col-md-6 text-center">
+                            <img src="../images/bg_1.png" class="d-block img-fluid rounded-circle" alt="Image 1">
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="row align-items-center">
+                        <!-- Texto -->
+                        <div class="col-12 col-md-6 text-center text-md-start">
+                            <h1 class="fw-bold" data-lang-key="looking">Looking for new opportunities!</h1>
+                            <p data-lang-key="homeDescription2">If you're looking for someone with a passion for programming, commitment, and a willingness to learn, I would love to be part of your team! I'm ready to contribute and keep developing my skills.</p>
+                        </div>
+                        <!-- Imagen -->
+                        <div class="col-12 col-md-6 text-center">
+                            <img src="../images/bg_2.png" class="d-block img-fluid rounded-circle" alt="Image 2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controles del carrusel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+
+
+    <section id="about" class="container my-5 vh-100">
+        <div class="row align-items-center">
+            <!-- Imagen -->
+            <div class="col-md-5 text-center">
+                <img src="../images/bg_2.png" alt="Your Image" class="d-block img-fluid rounded-circle">
+            </div>
+
+            <!-- Texto -->
+            <div class="col-md-7">
+                <div class="lang-content" data-lang="en">
+                    <h2 class="text-center text-md-start" data-lang-key="aboutMe">About Me</h2>
+                    <p class="text-center text-md-start" data-lang-key="aboutDescription">
+                        A small river named Duden flows by their place and supplies it with the necessary regelialia.
+                    </p>
+                </div>
+
+               <!-- Lista de información personal -->
+<ul id="personal-info" class="list-unstyled">
+    <li><strong><span data-lang-key="nameLabel">Name:</span></strong> Victor Salgado</li>
+    <li>
+        <strong><span data-lang-key="dobLabel">Date of birth:</span></strong>
+        <!-- Nuevo span para la fecha, con la fecha original en data-date-value -->
+        <span data-date-value="1989-01-15">January 15, 1989</span>
+    </li>    <li><strong><span data-lang-key="addressLabel">Address:</span></strong> Frankfurter Landstraße 49 Darmstadt</li>
+    <li><strong><span data-lang-key="zipcodeLabel">Zip code:</span></strong> 64291</li>
+    <li><strong><span data-lang-key="emailLabel">Email:</span></strong> victorsalsa@hotmail.com</li>
+    <li><strong><span data-lang-key="phoneLabel">Phone:</span></strong> +49 1522 3758978</li>
+</ul>
+            </div>
+        </div>
+    </section>
+
+
+   <!-- Modal Bootstrap for Image -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-transparent border-0">
+            <div class="modal-body text-center">
+                <img id="modalImage" src="" class="img-fluid" alt="Expanded Image">
+                <!-- Alt text could also be translated if needed, maybe dynamically based on the image shown -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sección de Resume (SIN CAMBIOS EN LOS Auslöser, MANTIENE onclick) -->
+<section id="resume" class="container my-5">
+    <h2 class="text-center mb-5 text-white display-4 fw-bold" data-lang-key="resume">Resume</h2>
+    <div class="row g-4">
+        <!-- Item 1: IT Specialist -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="resume-item card p-3 text-center shadow-sm d-flex flex-column h-100">
+                <h3 class="resume-title">2025 - <span data-lang-key="resumeTitleIT">IT Specialist</span></h3>
+                <!-- Mantiene el onclick original -->
+                <p data-lang-key="resumeDescIT" onclick="showImage('../images/work.jpg')" style="cursor: pointer;">In training as an IT specialist focused on application development.</p>
+            </div>
+        </div>
+
+        <!-- Item 2: Codecademy -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="resume-item card p-3 text-center shadow-sm d-flex flex-column h-100">
+                <h3 class="resume-title">2024 - <span data-lang-key="resumeTitleCodecademy">Codecademy</span></h3>
+                 <!-- Mantiene el onclick original -->
+                <p class="image-hover" onclick="showImage('../images/Screenshot 2025-04-01 080923.png')">
+                    <span data-lang-key="resumeDescCodecademyFS">• Full-Stack Engineer Path: Basics and advanced skills in web development.</span>
+                </p>
+                 <!-- Mantiene el onclick original -->
+                <p class="image-hover" onclick="showImage('../images/Screenshot 2025-04-01 081147.png')">
+                    <span data-lang-key="resumeDescCodecademyJava">• Learn Java: Introduction to Java programming with a certificate.</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Item 3: Security Guard -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="resume-item card p-3 text-center shadow-sm d-flex flex-column h-100">
+                <h3 class="resume-title">2014 - <span data-lang-key="resumeTitleSecurity">Security Guard Course</span></h3>
+                 <!-- Mantiene el onclick original -->
+                <p data-lang-key="resumeDescSecurity" onclick="showImage('images/staff-3.jpg')" style="cursor: pointer;">Academia Foris – Security guard training course.</p>
+            </div>
+        </div>
+
+        <!-- Item 4: Car Mechatronics -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="resume-item card p-3 text-center shadow-sm d-flex flex-column h-100">
+                <h3 class="resume-title">2009 – 2011 - <span data-lang-key="resumeTitleMechatronics">Car Mechatronics Training</span></h3>
+                 <!-- Mantiene el onclick original -->
+                <p data-lang-key="resumeDescMechatronics" onclick="showImage('images/staff-4.jpg')" style="cursor: pointer;">I.E.S. Universidad Laboral – Professional training as a car mechanic.</p>
+            </div>
+        </div>
+    </div> <!-- Fin de .row -->
+</section> <!-- Fin de #resume -->
+
+
+
+
+
+<!-- IMPORTANTE: Necesitas tener las funciones JavaScript showImage() y hideOverlayImage() -->
+<!-- definidas en tu archivo JS para que esto funcione.                         -->
+<!-- Revisa la respuesta anterior para obtener esas funciones si no las tienes. -->
+
+
+<!-- Modal Reutilizable para Imágenes (Colocar cerca del final del body) -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg"> <!-- Ajusta tamaño con modal-lg o modal-xl -->
+    <div class="modal-content bg-transparent border-0">
+       <div class="modal-header border-0 pb-0"> <!-- Quita padding-bottom del header -->
+            <!-- Botón de cierre estilizado para fondo oscuro/transparente -->
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+       </div>
+      <div class="modal-body text-center p-0"> <!-- Quita padding del body -->
+        <img src="" id="modalImage" class="img-fluid" alt="Imagen Ampliada">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Sección de Job Experience -->
+<section id="jobexperience" class="section-container container py-5">
+    <h2 class="text-center mb-4 text-white display-4 fw-bold" data-lang-key="jobexperience">Work Experience</h2>
+
+    <div class="row row-cols-1 row-cols-md-2 g-3">
+        <!-- Job 1: Xella -->
+        <div class="col">
+            <div class="job-item job-item-xella" data-bs-toggle="modal" data-bs-target="#job1Modal">
+                <div class="job-item-text p-3">
+                    <h5 class="fw-bold">XELLA GERMANY GMBH</h5>
+                    <p class="mb-0">05/2022 – 01/2025 <br> <span data-lang-key="jobTitleProdAssistant">Production Assistant</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Job 2: Reso -->
+        <div class="col">
+            <div class="job-item job-item-reso" data-bs-toggle="modal" data-bs-target="#job2Modal">
+                <div class="job-item-text p-3">
+                    <h5 class="fw-bold">RESO GMBH</h5>
+                    <p class="mb-0">02/2022 – 04/2022 <br> <span data-lang-key="jobTitleTruckDriver">Truck Driver</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Job 3: Markilux -->
+        <div class="col">
+            <div class="job-item job-item-markilux" data-bs-toggle="modal" data-bs-target="#job3Modal">
+                <div class="job-item-text p-3">
+                    <h5 class="fw-bold">MARKILUX GMBH</h5>
+                    <p class="mb-0">04/2021 – 10/2021 <br> <span data-lang-key="jobTitleProdAssistant">Production Assistant</span></p> <!-- Re-used key -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Job 4: Worms -->
+        <div class="col">
+            <div class="job-item job-item-worms" data-bs-toggle="modal" data-bs-target="#job4Modal">
+                <div class="job-item-text p-3">
+                    <h5 class="fw-bold">VERKEHRSGESELLSCHAFT WORMS</h5>
+                    <p class="mb-0">10/2019 – 06/2020 <br> <span data-lang-key="jobTitleBusDriver">Bus Driver</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Job 5: Eptisa -->
+        <div class="col">
+            <div class="job-item job-item-eptisa" data-bs-toggle="modal" data-bs-target="#job5Modal">
+                <div class="job-item-text p-3">
+                    <h5 class="fw-bold">EPTISA S.L.</h5>
+                    <p class="mb-0">02/2018 – 10/2018 <br> <span data-lang-key="jobTitleConstructionAssistant">Construction Assistant</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Job 6: Viten -->
+        <div class="col">
+            <div class="job-item job-item-viten" data-bs-toggle="modal" data-bs-target="#job6Modal">
+                <div class="job-item-text p-3">
+                    <h5 class="fw-bold">VITEN SEGURIDAD S.L.</h5>
+                    <p class="mb-0">01/2015 – 12/2017 <br> <span data-lang-key="jobTitleSecurityGuard">Security Guard</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Job 7: Verino -->
+        <div class="col">
+            <div class="job-item job-item-verino" data-bs-toggle="modal" data-bs-target="#job7Modal">
+                <div class="job-item-text p-3">
+                    <h5 class="fw-bold">📦 ROBERTO VERINO S.L.</h5>
+                    <p class="mb-0">2008 – 2009 <br> <span data-lang-key="jobTitleWarehouseWorker">Warehouse Worker</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modals for Job Experience -->
+<!-- Job 1 Modal: Xella -->
+<div class="modal fade" id="job1Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content job-item-xella custom-job-modal">
+            <div class="modal-header border-0">
+                 <!-- Keep company name static, translate job title -->
+                <h5 class="modal-title fw-bold">XELLA GERMANY GMBH | <span data-lang-key="jobTitleProdAssistant">Production Assistant</span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> <!-- Added aria-label -->
+            </div>
+            <div class="modal-body">
+                <p class="mb-2 fw-bold" data-lang-key="keyTasks">Key Tasks:</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2" data-lang-key="job1Task1">Operation and monitoring of production systems.</li>
+                    <li class="mb-2" data-lang-key="job1Task2">Cleaning and maintenance of equipment.</li>
+                    <li class="mb-2" data-lang-key="job1Task3">Reporting malfunctions and quality deviations.</li>
+                    <li class="mb-2" data-lang-key="job1Task4">Ensuring compliance with production parameters.</li>
+                </ul>
+                <a href="https://www.xella.de/de_DE/kontakt" class="btn btn-sm btn-outline-secondary" target="_blank" data-lang-key="contactBtnXella">Contact XELLA</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Job 2 Modal: Reso -->
+<div class="modal fade" id="job2Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content job-item-reso custom-job-modal">
+            <div class="modal-header border-0">
+                <h5 class="modal-title fw-bold">RESO GMBH | <span data-lang-key="jobTitleTruckDriver">Truck Driver</span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="mb-2 fw-bold" data-lang-key="keyTasks">Key Tasks:</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2" data-lang-key="job2Task1">Executing planned waste collection routes.</li>
+                    <li class="mb-2" data-lang-key="job2Task2">Ensuring truck roadworthiness and safety.</li>
+                    <li class="mb-2" data-lang-key="job2Task3">Reporting technical issues to the workshop.</li>
+                </ul>
+                <a href="https://www.reso-gmbh.de/ueber-uns/" class="btn btn-sm btn-outline-secondary" target="_blank" data-lang-key="contactBtnReso">Contact RESO</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Job 3 Modal: Markilux -->
+<div class="modal fade" id="job3Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content job-item-markilux custom-job-modal">
+            <div class="modal-header border-0">
+                <h5 class="modal-title fw-bold">MARKILUX GMBH | <span data-lang-key="jobTitleProdAssistant">Production Assistant</span></h5> <!-- Re-used key -->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="mb-2 fw-bold" data-lang-key="keyTasks">Key Tasks:</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2" data-lang-key="job3Task1">Picking parts according to order forms.</li>
+                    <li class="mb-2" data-lang-key="job3Task2">Sawing and stamping components.</li>
+                    <li class="mb-2" data-lang-key="job3Task3">Preparing shipments and handing them over to the next production stage.</li>
+                </ul>
+                <a href="https://www.markilux.com/de-de/kontakt?gad_source=1&gclid=..." class="btn btn-sm btn-outline-secondary" target="_blank" data-lang-key="contactBtnMarkilux">Contact MARKILUX</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Job 4 Modal: Worms -->
+<div class="modal fade" id="job4Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content job-item-worms custom-job-modal">
+            <div class="modal-header border-0">
+                <h5 class="modal-title fw-bold">VERKEHRSGESELLSCHAFT WORMS | <span data-lang-key="jobTitleBusDriver">Bus Driver</span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="mb-2 fw-bold" data-lang-key="keyTasks">Key Tasks:</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2" data-lang-key="job4Task1">Performing scheduled bus routes.</li>
+                    <li class="mb-2" data-lang-key="job4Task2">Handling fare transactions and accounting.</li>
+                    <li class="mb-2" data-lang-key="job4Task3">Providing customer service and ticket sales.</li>
+                </ul>
+                <a href="https://vgw-wonnegau.de/kontakt.html" class="btn btn-sm btn-outline-secondary" target="_blank" data-lang-key="contactBtnWorms">Contact VERKEHRSGESELLSCHAFT WORMS</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Job 5 Modal: Eptisa -->
+<div class="modal fade" id="job5Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content job-item-eptisa custom-job-modal">
+            <div class="modal-header border-0">
+                <h5 class="modal-title fw-bold">EPTISA S.L. | <span data-lang-key="jobTitleConstructionAssistant">Construction Assistant</span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="mb-2 fw-bold" data-lang-key="keyTasks">Key Tasks:</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2" data-lang-key="job5Task1">Transporting material samples from construction sites to the lab.</li>
+                    <li class="mb-2" data-lang-key="job5Task2">Conducting material tests.</li>
+                </ul>
+                <a href="https://www.eptisa.com/en/contact-us/" class="btn btn-sm btn-outline-secondary" target="_blank" data-lang-key="contactBtnEptisa">Contact EPTISA</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Job 6 Modal: Viten -->
+<div class="modal fade" id="job6Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content job-item-viten custom-job-modal">
+            <div class="modal-header border-0">
+                <h5 class="modal-title fw-bold">VITEN SEGURIDAD S.L. | <span data-lang-key="jobTitleSecurityGuard">Security Guard</span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="mb-2 fw-bold" data-lang-key="keyTasks">Key Tasks:</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2" data-lang-key="job6Task1">Monitoring company premises.</li>
+                    <li class="mb-2" data-lang-key="job6Task2">Controlling access for people and vehicles.</li>
+                    <li class="mb-2" data-lang-key="job6Task3">Surveillance via camera systems.</li>
+                </ul>
+                <a href="https://vitenseguridad.com/contacto" class="btn btn-sm btn-outline-secondary" target="_blank" data-lang-key="contactBtnViten">Contact VITEN SEGURIDAD</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Job 7 Modal: Verino -->
+<div class="modal fade" id="job7Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content job-item-verino custom-job-modal">
+            <div class="modal-header border-0">
+                <h5 class="modal-title fw-bold">ROBERTO VERINO S.L. | <span data-lang-key="jobTitleWarehouseWorker">Warehouse Worker</span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="mb-2 fw-bold" data-lang-key="keyTasks">Key Tasks:</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2" data-lang-key="job7Task1">Receiving and storing goods.</li>
+                    <li class="mb-2" data-lang-key="job7Task2">Sorting and assembling customer orders.</li>
+                    <li class="mb-2" data-lang-key="job7Task3">Packing and preparing shipments.</li>
+                </ul>
+                <a href="https://www.robertoverino.com/en/" class="btn btn-sm btn-outline-secondary" target="_blank" data-lang-key="contactBtnVerino">Contact ROBERTO VERINO</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Agrega más modales según sea necesario -->
+
+
+
+
+    <section id="skills" class="container my-5 vh-100">
+        <h2 class="text-center mb-4" data-lang-key="skills">My Skills</h2>
+
+        <div class="skill mb-3">HTML
+            <div class="progress">
+                <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated"
+                    style="width: 90%;">90%</div>
+            </div>
+        </div>
+        <div class="skill mb-3">CSS
+            <div class="progress">
+                <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated"
+                    style="width: 85%;">85%</div>
+            </div>
+        </div>
+        <div class="skill mb-3">Java
+            <div class="progress">
+                <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated"
+                    style="width: 70%;">70%</div>
+            </div>
+        </div>
+        <div class="skill mb-3">JavaScript
+            <div class="progress">
+                <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated"
+                    style="width: 80%;">80%</div>
+            </div>
+        </div>
+        <div class="skill mb-3">SQL
+            <div class="progress">
+                <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated"
+                    style="width: 75%;">75%</div>
+            </div>
+        </div>
+        <div class="skill mb-3">Node.js
+            <div class="progress">
+                <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated"
+                    style="width: 65%;">65%</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container my-5 vh-100">
+        <div class="row">
+            <!-- Proyecto 1 (3 columnas en grande, 12 en pequeño) -->
+            <div class="col-lg-9 col-md-12 mb-4">
+                <div class="project" style="background-image: url('../images/project-2.jpg');">
+                    <div class="project-overlay">Project 1</div>
+                </div>
+            </div>
+            <!-- Proyecto 2 (1 columna en grande, 12 en pequeño) -->
+            <div class="col-lg-3 col-md-12 mb-4">
+                <div class="project" style="background-image: url('../images/project-1.jpg');">
+                    <div class="project-overlay">Project 2</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Proyecto 3 (1 columna en grande, 12 en pequeño) -->
+            <div class="col-lg-3 col-md-12 mb-4">
+                <div class="project" style="background-image: url('../images/project-3.jpg');">
+                    <div class="project-overlay">Project 3</div>
+                </div>
+            </div>
+            <!-- Proyecto 4 (3 columnas en grande, 12 en pequeño) -->
+            <div class="col-lg-9 col-md-12 mb-4">
+                <div class="project" style="background-image: url('../images/project-4.jpg');">
+                    <div class="project-overlay">Project 4</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+   <!-- Contact Icons Section -->
+<section id="contact-info" class="container my-5"> <!-- Changed ID slightly to avoid conflict with form section -->
+    <h2 class="text-center mb-5 text-white display-4 fw-bold" data-lang-key="contact">Contact</h2> <!-- Added Section Title -->
+    <div class="row text-center">
+        <!-- Dirección -->
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+            <div class="contact-item p-4" data-bs-toggle="modal" data-bs-target="#addressModal">
+                <i class="bi bi-geo-alt-fill icon"></i>
+                <div class="text" data-lang-key="address">Address</div>
+            </div>
+        </div>
+        <!-- Teléfono -->
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+            <div class="contact-item p-4" data-bs-toggle="modal" data-bs-target="#phoneModal">
+                <i class="bi bi-telephone-fill icon"></i>
+                <div class="text" data-lang-key="phone">Phone</div>
+            </div>
+        </div>
+        <!-- Email -->
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+            <div class="contact-item p-4" data-bs-toggle="modal" data-bs-target="#emailModal">
+                <i class="bi bi-envelope-fill icon"></i>
+                <div class="text" data-lang-key="email">Email</div>
+            </div>
+        </div>
+        <!-- LinkedIn -->
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+            <div class="contact-item p-4" data-bs-toggle="modal" data-bs-target="#linkedinModal">
+                <i class="bi bi-linkedin icon"></i>
+                <div class="text" data-lang-key="linkedin">LinkedIn</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Modal Templates -->
+<!-- Address Modal -->
+<div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="addressModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-4">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addressModalLabel" data-lang-key="address">Address</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="d-flex flex-column align-items-center">
+                    <a href="https://www.google.de/maps/place/Frankfurter+Str.+49,+64293+Darmstadt/"
+                        target="_blank" class="custom-link mb-3">
+                        Frankfurter Str. 49, 64293 Darmstadt <!-- Address itself is usually not translated -->
+                    </a>
+                    <button class="btn btn-outline-primary mt-3"
+                        onclick="copyToClipboard('Frankfurter Str. 49, 64293 Darmstadt', this)"
+                        data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-title-en="Copied to clipboard!"
+                        data-bs-title-es="¡Copiado al portapapeles!"
+                        data-bs-title-de="In die Zwischenablage kopiert!">
+                        <i class="bi bi-clipboard"></i> <span data-lang-key="copyBtn">Copy</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Phone Modal -->
+<div class="modal fade" id="phoneModal" tabindex="-1" aria-labelledby="phoneModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-4">
+            <div class="modal-header">
+                <h5 class="modal-title" id="phoneModalLabel" data-lang-key="phone">Phone</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="d-flex flex-column align-items-center">
+                    <a href="tel:+4915223758978" class="custom-link mb-3">+49 1522 3758978</a> <!-- Actual phone number -->
+                    <button class="btn btn-outline-primary mt-3"
+                        onclick="copyToClipboard('+4915223758978', this)" data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        data-bs-title-en="Copied to clipboard!"
+                        data-bs-title-es="¡Copiado al portapapeles!"
+                        data-bs-title-de="In die Zwischenablage kopiert!">
+                        <i class="bi bi-clipboard"></i> <span data-lang-key="copyBtn">Copy</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Email Modal -->
+<div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="emailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-4">
+            <div class="modal-header">
+                <h5 class="modal-title" id="emailModalLabel" data-lang-key="email">Email</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="d-flex flex-column align-items-center">
+                    <a href="mailto:victorsalsa@hotmail.com" class="custom-link mb-3">victorsalsa@hotmail.com</a> <!-- Actual email -->
+                    <button class="btn btn-outline-primary mt-3"
+                        onclick="copyToClipboard('victorsalsa@hotmail.com', this)" data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        data-bs-title-en="Copied to clipboard!"
+                        data-bs-title-es="¡Copiado al portapapeles!"
+                        data-bs-title-de="In die Zwischenablage kopiert!">
+                        <i class="bi bi-clipboard"></i> <span data-lang-key="copyBtn">Copy</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- LinkedIn Modal -->
+<div class="modal fade" id="linkedinModal" tabindex="-1" aria-labelledby="linkedinModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-4">
+            <div class="modal-header">
+                <h5 class="modal-title" id="linkedinModalLabel" data-lang-key="linkedin">LinkedIn</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                 <!-- Update href with your actual LinkedIn profile -->
+                <a href="https://www.linkedin.com/in/victor-salgado-a45834182/" target="_blank" class="btn btn-success">
+                    <i class="bi bi-linkedin"></i> <span data-lang-key="visitLinkedInBtn">Visit LinkedIn</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Copied Message (If used separately from tooltip) -->
+<div id="copyMessage" class="copy-message" data-lang-key="copiedMsg">Copied to clipboard!</div>
+
+<!-- Contact Form Section -->
+<section id="contact-form-section" class="container my-5"> <!-- Changed ID -->
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-12">
+            <div class="card p-4 shadow">
+                <h2 class="text-center mb-4" data-lang-key="contactFormTitle">Contact Me</h2> <!-- More specific title -->
+                <!-- Update action with your Formspree endpoint -->
+                <form id="contact-form" action="https://formspree.io/f/xanedrqg" method="POST" novalidate>
+                    <!-- Nombre -->
+                    <div class="mb-3">
+                        <label for="form-name" class="form-label" data-lang-key="formNameLabel">Name:</label>
+                        <input type="text" id="form-name" name="name" class="form-control" required data-lang-placeholder="formNamePlaceholder" placeholder="Your name">
+                        <div class="invalid-feedback" data-lang-key="formNameError">Please enter your name.</div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label for="form-email" class="form-label" data-lang-key="formEmailLabel">Email:</label>
+                        <input type="email" id="form-email" name="email" class="form-control" required data-lang-placeholder="formEmailPlaceholder" placeholder="Your email">
+                        <div class="invalid-feedback" data-lang-key="formEmailError">Please enter a valid email address.</div>
+                    </div>
+
+                    <!-- Asunto -->
+                    <div class="mb-3">
+                        <label for="form-subject" class="form-label" data-lang-key="formSubjectLabel">Subject:</label>
+                        <input type="text" id="form-subject" name="subject" class="form-control" required data-lang-placeholder="formSubjectPlaceholder" placeholder="Message subject">
+                        <div class="invalid-feedback" data-lang-key="formSubjectError">Please enter a subject.</div>
+                    </div>
+
+                    <!-- Mensaje -->
+                    <div class="mb-3">
+                        <label for="form-message" class="form-label" data-lang-key="formMessageLabel">Message:</label>
+                        <textarea id="form-message" name="message" class="form-control" rows="4" required data-lang-placeholder="formMessagePlaceholder" placeholder="Write your message"></textarea>
+                        <div class="invalid-feedback" data-lang-key="formMessageError">Please enter your message.</div>
+                    </div>
+
+                    <!-- Botón de Enviar -->
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-warning w-100" data-lang-key="formSendButton">Send</button>
+                    </div>
+                </form>
+                 <!-- Optional: Add status message area for Formspree -->
+                 <p id="form-status" class="text-center mt-3"></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p data-lang-key="footerCopyright">© 2025 Victor Salgado Personal Portfolio</p>
+    <nav>
+        <ul>
+            <!-- Reusing keys from main navbar -->
+            <li><a href="#home" data-lang-key="home">Home</a></li>
+            <li><a href="#about" data-lang-key="about">About</a></li>
+            <li><a href="#resume" data-lang-key="resume">Resume</a></li>
+            <li><a href="#jobexperience" data-lang-key="jobexperience">Job experience</a></li>
+            <li><a href="#skills" data-lang-key="skills">Skills</a></li>
+            <li><a href="#projects" data-lang-key="projects">Projects</a></li>
+            <li><a href="#contact-info" data-lang-key="contact">Contact</a></li> <!-- Point to contact icons section -->
+        </ul>
+    </nav>
+</footer>
+    <!-- Overlay Simple para Imagen Grande -->
+<div id="imageOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); z-index: 1050; cursor: pointer; align-items: center; justify-content: center; padding: 20px;" onclick="hideOverlayImage()">
+    <img id="overlayImageContent" src="" alt="Imagen Ampliada" style="max-width: 90%; max-height: 90%; object-fit: contain; background: white; padding: 5px; border-radius: 5px;">
+    <!-- Botón de cierre opcional pero útil -->
+    <button type="button" style="position: absolute; top: 15px; right: 20px; font-size: 2rem; color: white; background: none; border: none; line-height: 1;" onclick="hideOverlayImage()" aria-label="Cerrar">×</button>
+</div>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
