@@ -153,6 +153,7 @@ let currentLang = 'en';
 function changeLanguage(lang) {
     console.log(`--- Changing language to: ${lang} ---`); // Log para depuración
     currentLang = lang; 
+    console.log(currentLang)
     // Mapa de idiomas a locales para Intl (Necesario para las fechas)
     const localeMap = {
         en: 'en-GB', // Inglés Británico para formato DD Month YYYY
@@ -242,6 +243,60 @@ function changeLanguage(lang) {
     });
     // ===> FIN DE LA NUEVA SECCIÓN <===
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+ 
+var projectLinks = {
+    'es': 'index1es.html',  // URL de la página en español
+    'en': 'index1en.html',  // URL de la página en inglés
+    'de': 'index1de.html'   // URL de la página en alemán
+};
+
+// Función para actualizar los enlaces según el idioma actual
+function updateProjectLinks() {
+    var link = projectLinks[currentLang];
+    console.log(`Updating project links to: ${link}`);
+
+    // Verificar si los elementos con los id existen
+    let element = document.getElementById('project-1');
+    if (element) {
+        element.setAttribute('href', link);
+    } else {
+        console.warn('Element with ID project-1 not found.');
+    }
+
+    element = document.getElementById('project-2');
+    if (element) {
+        element.setAttribute('href', link);
+    } else {
+        console.warn('Element with ID project-2 not found.');
+    }
+
+    element = document.getElementById('project-3');
+    if (element) {
+        element.setAttribute('href', link);
+    } else {
+        console.warn('Element with ID project-3 not found.');
+    }
+
+    element = document.getElementById('project-4');
+    if (element) {
+        element.setAttribute('href', link);
+    } else {
+        console.warn('Element with ID project-4 not found.');
+    }
+}
+updateProjectLinks()
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
     // 4. Update Bootstrap tooltip titles (código existente que funciona)
     console.log("4. Updating tooltips...");
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
@@ -266,6 +321,10 @@ function changeLanguage(lang) {
 }
 
 // --- Código de Soporte (Asegúrate de que sigue presente) ---
+
+
+
+
 
 // Inicialización de Tooltips (fuera de changeLanguage)
 document.addEventListener('DOMContentLoaded', () => {
@@ -532,3 +591,14 @@ function getFormTranslation(key) {
      // const initialLang = localStorage.getItem('language') || 'es'; // O tu lógica actual
      // changeLanguage(initialLang); // Llama a changeLanguage al inicio
   });
+
+
+
+
+
+
+
+
+
+
+ 
