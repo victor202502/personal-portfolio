@@ -67,6 +67,11 @@ const translations = {
         formValidationError: "Please fill in all required fields correctly.", // Mensaje para validación JS (si lo usas)
         // Footer...
         footerCopyright: "© 2025 Victor Salgado Personal Portfolio",
+        // Proyects...
+        project1ModalTitle: "Interactive Quiz",
+    project1ModalDesc: "This project is a full-stack interactive quiz application. The frontend is built with HTML, CSS (using Bootstrap for responsive design), and vanilla JavaScript. The backend is developed with Node.js and Express, and it includes user authentication using bcrypt for password hashing. User data and quiz progress are stored in a PostgreSQL database integrated via the hosting platform Render.\n\nUsers can register via a signup form or log in with test credentials (`user11` / `user11`). Once authenticated, users can access the quiz interface, answer multiple-choice questions, and their results and progress are saved for future sessions. The project focuses on DOM manipulation, conditional logic, user state management, and secure handling of user credentials.",
+    viewCodeBtn: "GitHub Repository",
+    viewProjectBtn: "Open Quiz"
     },
     es: {
          // --- Existing Keys ---
@@ -107,6 +112,11 @@ const translations = {
         formValidationError: "Por favor, completa todos los campos requeridos correctamente.",
         // Footer...
         footerCopyright: "© 2025 Portfolio Personal Victor Salgado",
+        //proyects...
+        project1ModalTitle: "Quiz Interactivo",
+        project1ModalDesc: "Este proyecto es una aplicación de cuestionario interactiva full-stack. El frontend está desarrollado con HTML, CSS (usando Bootstrap para diseño responsivo) y JavaScript puro. El backend está construido con Node.js y Express, e incluye autenticación de usuarios usando bcrypt para el hash de contraseñas. Los datos del usuario y el progreso del quiz se almacenan en una base de datos PostgreSQL integrada mediante la plataforma de alojamiento Render.\n\nLos usuarios pueden registrarse a través de un formulario de inscripción o iniciar sesión con credenciales de prueba (`user11` / `user11`). Una vez autenticados, pueden acceder a la interfaz del quiz, responder preguntas de opción múltiple, y sus resultados y progreso se guardan para futuras sesiones. El proyecto se enfoca en la manipulación del DOM, lógica condicional, gestión del estado del usuario y manejo seguro de credenciales.",
+        viewCodeBtn: "Repositorio GitHub",
+        viewProjectBtn: "Abrir Quiz"
     },
     de: {
          // --- Existing Keys ---
@@ -147,458 +157,425 @@ const translations = {
         formValidationError: "Bitte füllen Sie alle erforderlichen Felder korrekt aus.",
         // Footer...
         footerCopyright: "© 2025 Victor Salgado Persönliches Portfolio",
+        //proyects...
+        project1ModalTitle: "Interaktives Quiz",
+        project1ModalDesc: "Dieses Projekt ist eine Full-Stack-Quizanwendung. Das Frontend wurde mit HTML, CSS (unter Verwendung von Bootstrap für responsives Design) und Vanilla JavaScript erstellt. Das Backend wurde mit Node.js und Express entwickelt und beinhaltet eine Benutzer-Authentifizierung mit bcrypt zur Passwortverschlüsselung. Benutzerdaten und Quizfortschritte werden in einer PostgreSQL-Datenbank gespeichert, die über die Hosting-Plattform Render integriert ist.\n\nBenutzer können sich über ein Anmeldeformular registrieren oder sich mit Test-Zugangsdaten anmelden (`user11` / `user11`). Nach erfolgreicher Authentifizierung erhalten sie Zugriff auf die Quiz-Oberfläche, können Multiple-Choice-Fragen beantworten und ihre Ergebnisse und Fortschritte werden für zukünftige Sitzungen gespeichert. Das Projekt konzentriert sich auf DOM-Manipulation, bedingte Logik, Benutzerzustandsverwaltung und sichere Handhabung von Benutzeranmeldeinformationen.",
+        viewCodeBtn: "GitHub-Repository",
+        viewProjectBtn: "Quiz öffnen"
+        
     }
 };
-let currentLang = 'en'; 
-function changeLanguage(lang) {
-    console.log(`--- Changing language to: ${lang} ---`); // Log para depuración
-    currentLang = lang; 
-    console.log(currentLang)
-    // Mapa de idiomas a locales para Intl (Necesario para las fechas)
-    const localeMap = {
-        en: 'en-GB', // Inglés Británico para formato DD Month YYYY
-        es: 'es-ES', // Español de España
-        de: 'de-DE'  // Alemán de Alemania
-    };
-    const currentLocale = localeMap[lang] || 'en-GB'; // Usa inglés como fallback
-    console.log(`Using locale for dates: ${currentLocale}`);
+// ========================================================
+//                  GLOBAL VARIABLES
+// ========================================================
 
-    // 1. Translate elements with data-lang-key
-    console.log("1. Translating text elements...");
-    const elementsToTranslate = document.querySelectorAll('[data-lang-key]');
-    elementsToTranslate.forEach(element => {
-        const key = element.dataset.langKey;
-        if (translations[lang] && translations[lang][key] !== undefined) {
-            const translation = translations[lang][key];
-            if (key === 'footerCopyright') {
-                element.innerHTML = translation; // Necesario para ©
-            } else {
-                element.textContent = translation; // Seguro para la mayoría
-            }
-        } else {
-           // console.warn(`Translation key "${key}" not found for language "${lang}" in element:`, element);
-        }
-    });
+// Objeto de traducciones (DEBE ESTAR DEFINIDO ANTES - ASUMIDO)
+// const translations = { en: {...}, es: {...}, de: {...} };
 
-    // 2. Translate placeholders with data-lang-placeholder
-    console.log("2. Translating placeholders...");
-    const elementsWithPlaceholder = document.querySelectorAll('[data-lang-placeholder]');
-    elementsWithPlaceholder.forEach(element => {
-        const key = element.dataset.langPlaceholder;
-        if (translations[lang] && translations[lang][key] !== undefined) {
-            element.placeholder = translations[lang][key];
-        } else {
-           // console.warn(`Placeholder translation key "${key}" not found for language "${lang}" in element:`, element);
-        }
-    });
-
-    // ===> 3. Formatear fechas con data-date-value (NUEVA SECCIÓN) <===
-    console.log("3. Formatting dates...");
-    const dateElements = document.querySelectorAll('[data-date-value]');
-    console.log(`Found ${dateElements.length} elements with data-date-value.`);
-
-    dateElements.forEach((element, index) => {
-        const dateValue = element.dataset.dateValue; // Obtiene "YYYY-MM-DD"
-        console.log(`Processing date element #${index + 1}: Value="${dateValue}"`, element);
-
-        if (!dateValue) {
-            console.warn(`Element #${index + 1} has data-date-value but it's empty.`);
-            return; // Saltar si el valor está vacío
-        }
-
-        try {
-            // Crear objeto Date usando UTC para evitar problemas de zona horaria
-            const parts = dateValue.split('-');
-            if (parts.length !== 3) {
-                throw new Error("Invalid date format in data-date-value. Expected YYYY-MM-DD.");
-            }
-            // El mes es 0-indexado en Date.UTC(year, monthIndex, day)
-            const dateObject = new Date(Date.UTC(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2])));
-            console.log(`Created Date object for element #${index + 1}:`, dateObject);
-
-            // Verificar si la fecha es válida
-            if (isNaN(dateObject.getTime())) {
-                throw new Error("Created date object is invalid.");
-            }
-
-            // Opciones de formato
-            const options = {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                // timeZone: 'UTC' // Asegura que el formato use UTC
-            };
-
-            // Crear formateador y formatear
-            const formatter = new Intl.DateTimeFormat(currentLocale, options);
-            const formattedDate = formatter.format(dateObject);
-            console.log(`Formatted date for element #${index + 1} (${currentLocale}): "${formattedDate}"`);
-
-            element.textContent = formattedDate; // Actualizar el texto del span
-
-        } catch (error) {
-            console.error(`Error formatting date "${dateValue}" for element #${index + 1}:`, element, error);
-            // Mantener el texto original o mostrar error
-        }
-    });
-    // ===> FIN DE LA NUEVA SECCIÓN <===
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
- 
-var projectLinks = {
+// Enlaces de proyectos por idioma
+const projectLinks = {
     'es': 'index1es.html',  // URL de la página en español
     'en': 'index1en.html',  // URL de la página en inglés
     'de': 'index1de.html'   // URL de la página en alemán
 };
 
-// Función para actualizar los enlaces según el idioma actual
-function updateProjectLinks() {
-    var link = projectLinks[currentLang];
-    console.log(`Updating project links to: ${link}`);
+// Idioma actual (se establece al cargar la página en DOMContentLoaded)
+let currentLang = 'en';
 
-    // Verificar si los elementos con los id existen
-    let element = document.getElementById('project-1');
-    if (element) {
-        element.setAttribute('href', link);
-    } else {
-        console.warn('Element with ID project-1 not found.');
-    }
+// Referencias a elementos del DOM (mejor obtenerlas una vez si son estáticas)
+const imageOverlay = document.getElementById('imageOverlay');
+const overlayImageContent = document.getElementById('overlayImageContent');
+const navbar = document.querySelector('nav.navbar');
+let lastScrollTop = 0;
 
-    element = document.getElementById('project-2');
-    if (element) {
-        element.setAttribute('href', link);
-    } else {
-        console.warn('Element with ID project-2 not found.');
-    }
 
-    element = document.getElementById('project-3');
-    if (element) {
-        element.setAttribute('href', link);
-    } else {
-        console.warn('Element with ID project-3 not found.');
-    }
+// ========================================================
+//                  HELPER FUNCTIONS
+// ========================================================
 
-    element = document.getElementById('project-4');
-    if (element) {
-        element.setAttribute('href', link);
-    } else {
-        console.warn('Element with ID project-4 not found.');
+/**
+ * Obtiene una traducción para una clave dada, usando el idioma actual.
+ * Proporciona fallbacks a inglés y luego a la propia clave.
+ * @param {string} key - La clave de traducción a buscar.
+ * @returns {string} La cadena traducida o la clave si no se encuentra.
+ */
+function getFormTranslation(key) {
+    // Accede a la variable global 'currentLang' y al objeto 'translations'
+    // Asegúrate de que 'translations' esté definido globalmente.
+    if (typeof translations === 'undefined') {
+        console.error("ERROR: translations object is not defined!");
+        return key; // Retorna la clave si las traducciones no están disponibles
     }
+    return translations[currentLang]?.[key]
+        || translations['en']?.[key] // Fallback a inglés
+        || key;                   // Fallback a la clave misma
 }
-updateProjectLinks()
 
+/**
+ * Actualiza los atributos href de los enlaces de proyectos
+ * basándose en el idioma actual ('currentLang').
+ */
+function updateProjectLinks() {
+    const link = projectLinks[currentLang] || projectLinks['en']; // Fallback a inglés
+    console.log(`Updating project links for lang "${currentLang}" to: ${link}`);
 
+    const projectIds = [ 'project-2', 'project-3', 'project-4']; // IDs a actualizar
 
+    projectIds.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.setAttribute('href', link);
+        } else {
+             // Comentado para evitar ruido en la consola si algunos proyectos no existen siempre
+             // console.warn(`Element with ID ${id} not found.`);
+        }
+    });
+}
 
+// ========================================================
+//                  CORE LOGIC FUNCTIONS
+// ========================================================
 
-/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Cambia el idioma de la interfaz y actualiza todos los elementos dependientes.
+ * @param {string} lang - El código del idioma destino ('en', 'es', 'de').
+ */
+function changeLanguage(lang) {
+    console.log(`--- Changing language to: ${lang} ---`);
+    currentLang = lang; // Actualiza la variable global
+    document.documentElement.lang = lang; // Actualiza el atributo lang del HTML
 
-    // 4. Update Bootstrap tooltip titles (código existente que funciona)
-    console.log("4. Updating tooltips...");
+    const localeMap = { en: 'en-GB', es: 'es-ES', de: 'de-DE' };
+    const currentLocale = localeMap[lang] || 'en-GB';
+    console.log(`Using locale for dates: ${currentLocale}`);
+
+    // 1. Traducir textos (data-lang-key)
+    console.log("1. Translating text elements...");
+    document.querySelectorAll('[data-lang-key]').forEach(element => {
+        const key = element.dataset.langKey;
+        const translation = getFormTranslation(key); // Usa la función helper
+        if (key === 'footerCopyright') { // Ejemplo si necesitas innerHTML
+            element.innerHTML = translation;
+        } else {
+            element.textContent = translation;
+        }
+    });
+
+    // 2. Traducir placeholders (data-lang-placeholder)
+    console.log("2. Translating placeholders...");
+    document.querySelectorAll('[data-lang-placeholder]').forEach(element => {
+        const key = element.dataset.langPlaceholder;
+        element.placeholder = getFormTranslation(key); // Usa la función helper
+    });
+
+    // 3. Formatear fechas (data-date-value)
+    console.log("3. Formatting dates...");
+    document.querySelectorAll('[data-date-value]').forEach(element => {
+        const dateValue = element.dataset.dateValue;
+        if (!dateValue) return;
+        try {
+            const parts = dateValue.split('-');
+            if (parts.length !== 3) throw new Error("Invalid date format YYYY-MM-DD");
+            // Mes es 0-indexado en Date.UTC
+            const dateObject = new Date(Date.UTC(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2])));
+            if (isNaN(dateObject.getTime())) throw new Error("Invalid date object");
+            const options = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' };
+            const formatter = new Intl.DateTimeFormat(currentLocale, options);
+            element.textContent = formatter.format(dateObject);
+        } catch (error) {
+            console.error(`Error formatting date "${dateValue}":`, error);
+            element.textContent = dateValue; // Mostrar valor original en caso de error
+        }
+    });
+
+    // 4. Actualizar enlaces de proyectos
+    console.log("4. Updating project links...");
+    updateProjectLinks(); // <-- LLAMADA CORRECTA AQUÍ
+
+    // 5. Update Bootstrap tooltip titles (para tooltips AUTOMÁTICOS si los tienes)
+    // NOTA: Si quitaste 'data-bs-toggle="tooltip"' de los botones de copia,
+    // esta sección NO afectará a esos botones, lo cual es correcto.
+    console.log("5. Updating automatic tooltips (if any)...");
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
     tooltipTriggerList.forEach(tooltipTriggerEl => {
         const tooltip = bootstrap.Tooltip.getInstance(tooltipTriggerEl);
         const titleAttributeKey = `data-bs-title-${lang}`;
-        const newTitle = tooltipTriggerEl.getAttribute(titleAttributeKey);
+        // Usa getFormTranslation si prefieres centralizar, o los atributos data-* como estaba
+         const newTitle = tooltipTriggerEl.getAttribute(titleAttributeKey) || tooltipTriggerEl.getAttribute('data-bs-title-en'); // Fallback
 
-        if (newTitle) { // Solo actualiza si hay un título específico para este idioma
+        if (newTitle) {
             if (tooltip) {
                 tooltip.setContent({ '.tooltip-inner': newTitle });
             } else {
-                tooltipTriggerEl.setAttribute('title', newTitle);
-            }
-            tooltipTriggerEl.setAttribute('data-bs-original-title', newTitle);
+                 // Si no hay instancia, puede que baste con actualizar el title (Bootstrap lo recogerá al inicializar o en hover)
+                 tooltipTriggerEl.setAttribute('title', newTitle);
+             }
+             // Actualizar también el data-bs-original-title es importante para Bootstrap 5.2+
+             tooltipTriggerEl.setAttribute('data-bs-original-title', newTitle);
         }
     });
 
     console.log(`--- Language change to ${lang} complete ---`);
-    // Store language preference if needed
-    // localStorage.setItem('language', lang);
+    // Opcional: Guardar preferencia
+    // localStorage.setItem('preferredLanguage', lang);
 }
 
-// --- Código de Soporte (Asegúrate de que sigue presente) ---
 
-
-
-
-
-// Inicialización de Tooltips (fuera de changeLanguage)
-document.addEventListener('DOMContentLoaded', () => {
-    console.log("DOM loaded. Initializing tooltips...");
-    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl);
-    });
-    console.log(`Initialized ${tooltipList.length} tooltips.`);
-
-    // Opcional: Establecer idioma inicial
-    // const initialLang = localStorage.getItem('language') || 'en';
-    // changeLanguage(initialLang);
-});
-
-// Función copyToClipboard (definida)
-function copyToClipboard(text, buttonElement) {
+/**
+ * Copia texto al portapapeles y muestra un tooltip de confirmación localizado.
+ * Usa `getFormTranslation` para el mensaje.
+ * @param {string} text - El texto a copiar.
+ * @param {HTMLElement} button - El botón que activó la copia.
+ */
+function copyToClipboard(text, button) {
     navigator.clipboard.writeText(text).then(() => {
-        console.log('Text copied to clipboard:', text);
-        const tooltip = bootstrap.Tooltip.getInstance(buttonElement);
-        if (tooltip) {
-            tooltip.show();
-            setTimeout(() => { tooltip.hide(); }, 1500);
+        const tooltipTitle = getFormTranslation('copiedMsg'); // Obtiene texto traducido
+
+        // Desechar tooltip anterior si existe
+        const existingTooltip = bootstrap.Tooltip.getInstance(button);
+        if (existingTooltip) {
+            existingTooltip.dispose();
         }
+
+        // Crear y mostrar nuevo tooltip manual
+        const tooltip = new bootstrap.Tooltip(button, {
+            title: tooltipTitle,
+            trigger: 'manual',
+            placement: button.getAttribute('data-bs-placement') || 'top',
+        });
+
+        tooltip.show();
+
+        // Ocultar y desechar después de un tiempo
+        setTimeout(() => {
+            const currentTooltipInstance = bootstrap.Tooltip.getInstance(button);
+            if (currentTooltipInstance) {
+               currentTooltipInstance.hide();
+               button.addEventListener('hidden.bs.tooltip', () => {
+                   const finalInstance = bootstrap.Tooltip.getInstance(button);
+                   if (finalInstance) finalInstance.dispose();
+               }, { once: true });
+            }
+        }, 1000); // Duración del tooltip: 1 segundo
+
     }).catch(err => {
-        console.error('Failed to copy text: ', err);
+        console.error("Error copying to clipboard: ", err);
+        const errorMsg = getFormTranslation('copyErrorMsg') || 'Failed to copy!'; // Mensaje de error (traducido opcionalmente)
+        const errorTooltip = new bootstrap.Tooltip(button, {
+             title: errorMsg,
+             trigger: 'manual',
+             placement: button.getAttribute('data-bs-placement') || 'top',
+             customClass: 'tooltip-danger' // Clase opcional para estilo de error
+        });
+        errorTooltip.show();
+        setTimeout(() => {
+            const instance = bootstrap.Tooltip.getInstance(button);
+            if (instance) instance.dispose();
+        }, 1500);
     });
 }
 
-// --- Cómo usarlo ---
-// Llama a changeLanguage('es'), changeLanguage('de'), etc., cuando sea necesario.
-// Asegúrate de que el HTML para la fecha sea:
-// <li>
-//    <strong><span data-lang-key="dobLabel">...</span></strong>
-//    <span data-date-value="1989-01-15">January 15, 1989</span>
-// </li>
+/**
+ * Maneja el envío del formulario de contacto, incluyendo validación y feedback al usuario.
+ * @param {Event} event - El evento de envío del formulario.
+ */
+async function handleSubmit(event) {
+    event.preventDefault(); // Prevenir envío normal
 
-let navbar = document.querySelector('nav.navbar');
-let lastScrollTop = 0;
+    const form = event.target;
+    const status = document.getElementById('form-status');
 
-window.addEventListener("scroll", function() {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop > lastScrollTop && scrollTop > 50) {
-        navbar.style.top = "-60px"; // Desaparece al hacer scroll hacia abajo
-    } else {
-        navbar.style.top = "0"; // Aparece al hacer scroll hacia arriba
+    // Validación Bootstrap (o la que uses)
+    if (!form.checkValidity()) {
+        event.stopPropagation();
+        form.classList.add('was-validated');
+        // Podrías mostrar un mensaje general aquí si quieres
+        // status.innerHTML = getFormTranslation('formValidationError');
+        // status.className = 'form-status-message text-danger'; // Asegúrate de definir esta clase CSS
+        // status.style.display = 'block';
+        return;
     }
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Para evitar que el valor sea negativo
-});
+    form.classList.add('was-validated'); // Muestra estilos de validación :valid/:invalid
 
-// Función para cambiar la clase active en la navbar
-// Función para cambiar la clase active en la navbar
-function updateNavbar() {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-    
-    let currentSection = '';
+    // Feedback: Enviando...
+    status.innerHTML = getFormTranslation('formStatusSending');
+    status.className = 'form-status-message text-info'; // Usa clases para estilo
+    status.style.display = 'block';
+
+    const formData = new FormData(form);
+
+    try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+            // Éxito
+            status.innerHTML = getFormTranslation('formStatusSuccess');
+            status.className = 'form-status-message text-success';
+            form.reset(); // Limpia el formulario
+            form.classList.remove('was-validated'); // Quita clases de validación
+        } else {
+            // Error del servidor (ej. Formspree)
+            status.innerHTML = getFormTranslation('formStatusErrorServer');
+            status.className = 'form-status-message text-danger';
+        }
+    } catch (error) {
+        // Error de red
+        console.error("Form submission error:", error);
+        status.innerHTML = getFormTranslation('formStatusErrorNetwork');
+        status.className = 'form-status-message text-danger';
+    }
+
+    // Ocultar mensaje después de 5 segundos
+    setTimeout(() => {
+        if (status) {
+            status.innerHTML = '';
+            status.style.display = 'none';
+            status.className = 'form-status-message'; // Resetear clase
+        }
+    }, 5000);
+}
+
+
+/**
+ * Muestra/oculta la barra de navegación al hacer scroll.
+ */
+function handleNavbarScroll() {
+    if (!navbar) return; // Salir si la navbar no se encontró
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop && scrollTop > 50) {
+        navbar.style.top = "-80px"; // Ajusta este valor si la altura de tu navbar es diferente
+    } else {
+        navbar.style.top = "0";
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+}
+
+/**
+ * Actualiza el enlace activo en la barra de navegación según la sección visible.
+ */
+function updateNavbarActiveLink() {
+    const sections = document.querySelectorAll('section[id]'); // Solo secciones con ID
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link[href^="#"]'); // Solo enlaces internos
+    if (navLinks.length === 0) return;
+
+    let currentSectionId = '';
+    let minDistance = Infinity;
 
     sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-            currentSection = section.id; // Guardar la sección visible
+        const sectionTop = section.offsetTop - (navbar ? navbar.offsetHeight : 60); // Ajuste por altura de navbar
+        const distance = Math.abs(window.pageYOffset - sectionTop);
+
+        // Encuentra la sección más cercana a la parte superior de la ventana
+        if (distance < minDistance) {
+            minDistance = distance;
+            // Considera una sección como activa si está razonablemente cerca de la parte superior
+            if(window.pageYOffset >= sectionTop - window.innerHeight * 0.3) {
+               currentSectionId = section.id;
+            }
         }
     });
 
-    // Eliminar la clase active de todos los enlaces
-    navLinks.forEach(link => {
-        if (!link.classList.contains('dropdown-toggle')) {
-            link.classList.remove('active');
-        }
-    });
+     // Caso especial: si estamos muy arriba, activa 'home' (si existe)
+     if (window.pageYOffset < window.innerHeight * 0.5) {
+         const homeLink = document.querySelector('.navbar-nav .nav-link[href="#home"]');
+         if (homeLink) currentSectionId = 'home';
+     }
 
-    // Añadir la clase active al enlace correspondiente
+
     navLinks.forEach(link => {
-        if (!link.classList.contains('dropdown-toggle') && link.getAttribute('href').substring(1) === currentSection) {
+        link.classList.remove('active');
+        // Comprueba si el href del enlace (sin #) coincide con la sección actual
+        if (link.getAttribute('href').substring(1) === currentSectionId) {
             link.classList.add('active');
         }
     });
 }
 
-// Agregar el evento de scroll
-window.addEventListener('scroll', updateNavbar);
-
-// Ejecutar la función una vez al cargar la página para establecer la clase active correctamente
-document.addEventListener('DOMContentLoaded', updateNavbar);
-
-
-/*function showImage(imageSrc) {
-    document.getElementById("modalImage").src = imageSrc;
-    var modal = new bootstrap.Modal(document.getElementById("imageModal"));
-    modal.show();
-}*/
-
-// Obtener referencias a los elementos del overlay (mejor hacerlo una vez fuera)
-const imageOverlay = document.getElementById('imageOverlay');
-const overlayImageContent = document.getElementById('overlayImageContent');
 
 /**
  * Muestra la imagen en el overlay grande.
- * Esta función REEMPLAZA tu showImage() existente.
  * @param {string} imageSource La ruta de la imagen a mostrar.
  */
 function showImage(imageSource) {
-  if (imageOverlay && overlayImageContent && imageSource) {
-    console.log("Mostrando imagen:", imageSource); // Para depurar
-    overlayImageContent.src = imageSource; // Pone la imagen correcta en el <img> del overlay
-    imageOverlay.style.display = 'flex'; // Muestra el overlay (usamos flex para centrar)
-  } else {
-    console.error("Error: No se encontró el overlay o la fuente de la imagen.");
-  }
+    if (imageOverlay && overlayImageContent && imageSource) {
+        overlayImageContent.src = imageSource;
+        imageOverlay.style.display = 'flex';
+    } else {
+        console.error("Cannot show image: Overlay elements not found or imageSource missing.");
+    }
 }
 
 /**
  * Oculta el overlay de la imagen.
- * Se llama al hacer clic en el fondo del overlay o en el botón de cierre.
  */
 function hideOverlayImage() {
-  if (imageOverlay) {
-    imageOverlay.style.display = 'none'; // Oculta el overlay
-    overlayImageContent.src = ''; // Limpia la imagen (opcional, pero bueno)
-    console.log("Overlay oculto."); // Para depurar
-  }
+    if (imageOverlay) {
+        imageOverlay.style.display = 'none';
+        overlayImageContent.src = ''; // Limpia src para liberar memoria (opcional)
+    }
 }
 
 
-// Función para copiar al portapapeles
-function copyToClipboard(text, button) {
-    // Copiar al portapapeles
-    navigator.clipboard.writeText(text).then(() => {
-        // Crear y mostrar tooltip manualmente
-        const tooltip = new bootstrap.Tooltip(button, {
-            trigger: 'manual',
-            title: 'Copied to clipboard!'
-        });
+// ========================================================
+//             EVENT LISTENERS & INITIALIZATION
+// ========================================================
 
-        // Mostrar el tooltip al hacer clic
-        tooltip.show();
-        
-        // Ocultar el mensaje después de 3 segundos
-        setTimeout(() => {
-            tooltip.hide();
-        }, 1000);
-    }).catch(err => {
-        console.error("Error al copiar al portapapeles: ", err);
-    });
-}
-
-// Inicialización de todos los tooltips cuando la página se cargue
 document.addEventListener('DOMContentLoaded', () => {
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    tooltipTriggerList.forEach(function (tooltipTriggerEl) {
-        // Desactivar el trigger por defecto (hover)
-        const tooltip = new bootstrap.Tooltip(tooltipTriggerEl, {
-            trigger: 'manual' // Solo mostrar el tooltip manualmente
-        });
+    console.log("DOM fully loaded and parsed.");
+
+    // 1. Inicializar Tooltips Automáticos (si los hay)
+    //    Asegúrate de que los botones de copia NO tengan 'data-bs-toggle="tooltip"'
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+        // NOTA: No establezcas trigger: 'manual' aquí, eso se maneja en copyToClipboard
     });
-});
+    console.log(`Initialized ${tooltipTriggerList.length} automatic tooltips.`);
 
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("contact-form");
+    // 2. Configurar Validación de Formulario (Bootstrap)
+    const contactForm = document.getElementById("contact-form");
+    if (contactForm) {
+        contactForm.setAttribute('novalidate', ''); // Prevenir validación HTML5 nativa
+        contactForm.addEventListener("submit", function (event) {
+            // Este listener solo añade la clase 'was-validated' para estilos
+            // La lógica de validación real está en handleSubmit
+            if (!contactForm.checkValidity()) {
+                // event.preventDefault(); // Prevenido en handleSubmit
+                // event.stopPropagation(); // Prevenido en handleSubmit
+            }
+            contactForm.classList.add("was-validated");
+        }, false); // false para que se ejecute antes que handleSubmit si es necesario
 
-    form.addEventListener("submit", function (event) {
-        if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
-        }
-        form.classList.add("was-validated");
-    });
-});
+        // 3. Añadir Listener para el Envío Asíncrono del Formulario
+        contactForm.addEventListener("submit", handleSubmit);
+        console.log("Form submit listener added.");
 
-
-function getFormTranslation(key) {
-    // Accede a la variable global 'currentLang' y al objeto 'translations'
-    // Proporciona un fallback al inglés y luego a la propia clave si no se encuentra
-    return translations[currentLang]?.[key] || translations['en']?.[key] || key;
-  }
-
-
-  async function handleSubmit(event) {
-    event.preventDefault();
-  
-    const form = event.target; // Más corto que document.getElementById('contact-form')
-    const status = document.getElementById('form-status');
-  
-    // --- VALIDACIÓN ANTES DE ENVIAR ---
-    if (!form.checkValidity()) {
-      event.stopPropagation();
-      form.classList.add('was-validated');
-      // Opcional: Mostrar mensaje de error general usando la clave
-      // status.innerHTML = getFormTranslation('formValidationError');
-      // status.style.display = 'block';
-      // status.classList.add('text-danger');
-      return;
+    } else {
+        console.warn("Contact form not found.");
     }
-    form.classList.add('was-validated'); // Para estilos 'is-valid' si los usas
-  
-    // --- ENVÍO CON FETCH ---
-    const formData = new FormData(form);
-  
-    // Usa la clave de traducción para "Enviando..."
-    status.innerHTML = getFormTranslation('formStatusSending');
-    status.style.display = 'block';
-    status.classList.remove('text-danger', 'text-success');
-  
-    try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-  
-      if (response.ok) {
-        // Usa la clave de traducción para "Éxito"
-        status.innerHTML = getFormTranslation('formStatusSuccess');
-        status.classList.remove('text-danger');
-        status.classList.add('text-success');
-  
-        form.reset();
-        form.classList.remove('was-validated');
-  
-        const formElements = form.querySelectorAll('.form-control');
-        formElements.forEach(element => {
-          element.classList.remove('is-invalid');
-          element.classList.remove('is-valid');
-        });
-  
-      } else {
-        // Error del servidor (Formspree) - Usa clave genérica
-        // Nota: Decidimos no intentar traducir los errores específicos de Formspree
-        status.innerHTML = getFormTranslation('formStatusErrorServer');
-        status.classList.remove('text-success');
-        status.classList.add('text-danger');
-        // No necesitas el response.json().then(...) si usas el mensaje genérico
-      }
-    } catch (error) {
-      // Error de red - Usa clave específica
-      status.innerHTML = getFormTranslation('formStatusErrorNetwork');
-      status.classList.remove('text-success');
-      status.classList.add('text-danger');
+
+    // 4. Añadir Listeners de Scroll para Navbar
+    window.addEventListener('scroll', handleNavbarScroll);
+    window.addEventListener('scroll', updateNavbarActiveLink); // Llama también al actualizar enlace activo
+    console.log("Navbar scroll listeners added.");
+
+    // 5. Ejecutar actualización de Navbar al cargar
+    updateNavbarActiveLink();
+
+    // 6. Establecer Idioma Inicial y Aplicarlo
+    //    (Ejemplo: leer de localStorage o usar un valor por defecto)
+    const initialLang = localStorage.getItem('preferredLanguage') || 'de'; // Cambia 'es' a tu idioma por defecto preferido
+    console.log(`Setting initial language to: ${initialLang}`);
+    changeLanguage(initialLang); // ¡IMPORTANTE! Llama a changeLanguage al inicio
+
+    // 7. Añadir listener al overlay de imagen para cerrarlo (si existe)
+    if (imageOverlay) {
+        imageOverlay.addEventListener('click', hideOverlayImage);
+        console.log("Image overlay close listener added.");
     }
-  
-    setTimeout(() => {
-        // Comprueba si el elemento 'status' todavía existe (buena práctica)
-        if (status) {
-          status.innerHTML = ''; // Borra el texto del mensaje
-          status.style.display = 'none'; // Oculta el párrafo (para que no ocupe espacio)
-          // Opcional: También quita las clases por si acaso
-          status.classList.remove('text-success', 'text-danger');
-        }
-      }, 5000);
-      // --- FIN: CÓDIGO PARA OCULTAR MENSAJE ---
-  }
-  
-  // Asegúrate de que el listener se añade después de que el DOM esté listo
-  document.addEventListener('DOMContentLoaded', () => {
-     const form = document.getElementById('contact-form');
-     if (form) {
-        form.addEventListener("submit", handleSubmit);
-     }
-     // Aquí también deberías establecer el idioma inicial al cargar la página
-     // const initialLang = localStorage.getItem('language') || 'es'; // O tu lógica actual
-     // changeLanguage(initialLang); // Llama a changeLanguage al inicio
-  });
 
-
-
-
-
-
-
-
-
-
- 
+}); // Fin de DOMContentLoaded

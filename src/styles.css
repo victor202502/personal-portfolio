@@ -1,169 +1,441 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@700&display=swap');
+
 body {
     background-color: #000;
     color: #f4f4f4;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Lato', Arial, sans-serif; /* Fuente base para párrafos */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', Arial, sans-serif; /* Fuente para encabezados */
 }
 
 header {
     margin-bottom: 20px;
 }
 
+/* ===== Navbar Styles (Sin cambios) ===== */
 .navbar {
     background-color: #333;
-}
-
-.navbar .nav-link {
-    color: #f4f4f4 !important;
-}
-
-.navbar .nav-link:hover {
-    color: #f1c40f !important;
-}
-/* Estilo para el navbar flotante */
-nav.navbar {
-    transition: top 0.3s;
-}
-/* Estilo para la navbar activa */
-.navbar-nav .nav-link.active {
-    color: #f1c40f !important;  /* El color que desees, en este caso amarillo */
-    font-weight: bold;  /* Poner el texto en negrita */
-    border-bottom: 2px solid #f1c40f;  /* Barra de subrayado debajo del enlace */
-}
-
-/* Opcional: color por defecto de las nav-links */
-.navbar-nav .nav-link {
-    color: white !important;
-}
-
-
-/* Navbar flotante */
-.navbar {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1030; /* Asegúrate de que esté encima del contenido */
+    z-index: 1030;
+    transition: top 0.3s;
 }
-
-/* Botón de idioma con fondo amarillo */
-.nav-item .dropdown-toggle {
-    background-color: #f1c40f;  /* Fondo amarillo */
-    color: black !important;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-}
-
-/* Cambio del fondo del dropdown cuando se abre */
-.nav-item .dropdown-menu {
-    background-color: #f1c40f;  /* Fondo amarillo del menú desplegable */
-}
-/* Evitar que el botón de idioma cambie como los demás enlaces */
-.navbar-nav .nav-item .dropdown-toggle {
-    background-color: #f1c40f; /* Color de fondo */
-    color: black; /* Color del texto */
-    font-weight: bold;
-    padding: 8px 15px; /* Espaciado interno */
-    border-radius: 5px; /* Bordes redondeados */
-}
-
-/* Cambio de color al hacer hover solo en el botón de idioma */
-.navbar-nav .nav-item .dropdown-toggle:hover {
-    background-color: #b49b36; /* Cambia a naranja al pasar el mouse */
-    color: black!important;
-}
+/* ... (resto de estilos navbar sin cambios) ... */
+.navbar .nav-link { color: #f4f4f4 !important; }
+.navbar .nav-link:hover { color: #f1c40f !important; }
+.navbar-nav .nav-link.active { color: #f1c40f !important; font-weight: bold; border-bottom: 2px solid #f1c40f; }
+.navbar-nav .nav-link { color: white !important; }
+.navbar-nav .nav-item .dropdown-toggle { background-color: #f1c40f; color: black !important; font-weight: bold; border: none; border-radius: 5px; padding: 8px 15px; }
+.navbar-nav .nav-item .dropdown-toggle:hover { background-color: #b49b36; color: black !important; }
+.nav-item .dropdown-menu { background-color: #f1c40f; }
+.nav-item .dropdown-menu .dropdown-item { color: black !important; background-color: #f1c40f; }
+.nav-item .dropdown-menu .dropdown-item:hover { background-color: orange; color: white !important; }
 
 
-
-/* Cambiar color de los elementos del menú desplegable */
-.navbar-nav .dropdown-menu .dropdown-item {
-    color: black; /* Texto en negro */
-}
-
-/* Cambiar color de los elementos del menú desplegable al pasar el mouse */
-.navbar-nav .dropdown-menu .dropdown-item:hover {
-    background-color: orange; /* Fondo naranja al pasar el mouse */
-    color: white;
-}
-
-
-.nav-item .dropdown-menu .dropdown-item {
-    background-color: #f1c40f;  /* Fondo amarillo de los ítems */
-    color: black !important;  /* Texto negro */
-}
-
-.nav-item .dropdown-menu .dropdown-item:hover {
-    background-color: #b49b36;  /* Color de fondo cuando se pasa el mouse sobre el ítem */
-}
-
-/*home section*/
-
-
+/* ===== General Section Styling (Sin cambios) ===== */
 section {
-    padding: 60px 20px;
+    padding-top: 80px;
+    /* padding-left: 20px; */ /* Quizás quieras quitar estos si otras secciones */
+    /* padding-right: 20px; */ /* también deben ser full-width a veces */
+    padding-bottom: 60px;
     margin-bottom: 20px;
+    overflow: hidden;
 }
 
 
+/* ===== Home Section (#home / Carousel) - AJUSTES DE MARGEN/ALINEACIÓN ===== */
+#home {
+    padding-left: 0;  /* Asegurar no hay padding lateral en la sección */
+    padding-right: 0; /* Asegurar no hay padding lateral en la sección */
+    padding-top: 80px; /* Mantener padding superior por navbar */
+    padding-bottom: 0; /* Padding vertical se maneja en .carousel-item */
+    margin-bottom: 20px;
+    overflow: hidden; /* Mantener */
+}
+
+#home .carousel-item {
+     background: radial-gradient(ellipse at center, #1c1c1c 0%, #000 80%);
+     padding-top: 2rem;
+     padding-bottom: 4rem;
+}
+
+/* -- Imagen del Carrusel (Sin cambios) -- */
+#home .carousel-item img.rounded-circle {
+    border: 4px solid rgba(241, 196, 15, 0.6);
+    box-shadow: 0 0 20px rgba(241, 196, 15, 0.3);
+}
+
+/* -- Texto del Carrusel (BASE - SIN MÁRGENES LATERALES) -- */
+/* Se eliminan margin-left y margin-right de aquí */
+/* El padding de la columna y text-center (en HTML) manejarán el espacio en móvil */
+#home .carousel-item img {
+    max-height: 500px;
+    margin: 10px auto;
+}
+#home .carousel-item h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #f1c40f;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* margin-left: 10px; */   /* ELIMINADO */
+    /* margin-right: 10px; */  /* ELIMINADO */
+}
+
+#home .carousel-item p {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    line-height: 1.7;
+    /* margin-left: 10px; */   /* ELIMINADO */
+    /* margin-right: 10px; */  /* ELIMINADO */
+}
+
+/* -- Controles del Carrusel (Sin cambios) -- */
 #carouselExample .carousel-control-prev,
 #carouselExample .carousel-control-next {
-    top: 80%; /* Baja las flechas hacia abajo */
+    top: 50%;
     transform: translateY(-50%);
+    width: 5%;
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out, background-color 0.3s ease;
 }
-
-
-#carouselExample .carousel-control-prev,
-#carouselExample .carousel-control-next {
-    opacity: 0; /* Oculta las flechas por defecto */
-    transition: opacity 0.3s ease-in-out;
-}
-
 #carouselExample:hover .carousel-control-prev,
 #carouselExample:hover .carousel-control-next {
-    opacity: 1; /* Muestra las flechas solo al pasar el mouse */
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+#carouselExample .carousel-control-prev-icon,
+#carouselExample .carousel-control-next-icon {
+    background-size: 60%, 60%;
+    filter: invert(85%) sepia(60%) saturate(450%) hue-rotate(350deg) brightness(105%) contrast(101%);
 }
 
 
+/* --- Media Queries para Responsividad (Texto del Carrusel - Márgenes aplicados aquí) --- */
 
-.carousel-item img {
-    max-height: 500px; /* Altura máxima de las imágenes */
-    object-position: center; /* Centra la imagen si hay recorte */
-    max-width: fit-content;
+/* Estilos para pantallas medianas y grandes (>= 768px) */
+/* Aquí es donde se activa 'text-md-start', así que aplicamos el margen izquierdo */
+@media (min-width: 768px) {
+    #home .carousel-item {
+        padding-top: 4rem;
+        padding-bottom: 5rem;
+    }
+    #home .carousel-item h1 {
+        font-size: 3rem;
+        margin-left: 50px;   /* Margen izquierdo DESDE este breakpoint */
+        margin-right: 0;    /* Asegurar no hay margen derecho */
+    }
+    #home .carousel-item p {
+        margin-left: 50px;   /* Margen izquierdo DESDE este breakpoint */
+        margin-right: 0;    /* Asegurar no hay margen derecho */
+    }
+}
+
+/* Estilos para pantallas muy grandes (>= 1400px) */
+/* Sobrescribe el margen izquierdo para pantallas aún más grandes */
+@media (min-width: 1400px) {
+     #home .carousel-item {
+        padding-top: 5rem;
+        padding-bottom: 6rem;
+    }
+    #home .carousel-item h1 {
+        font-size: 3.8rem;
+        margin-left: 300px;  /* Margen izquierdo AUMENTADO */
+    }
+    #home .carousel-item p {
+        margin-left: 300px;  /* Margen izquierdo AUMENTADO */
+    }
+}
+
+/* ===== FIN DE AJUSTES PARA #home ===== */
+
+/* ===== Resto de tu CSS (Sin cambios) ===== */
+/* ... (About, Projects, Contact, Footer, Modals, etc.) ... */
+
+/* ===== About Section (#about) - ESTILOS MEJORADOS ===== */
+
+#about {
+    /* Hereda padding-top, padding-bottom, margin-bottom de la regla 'section' general */
+    /* Puedes añadir un fondo específico si quieres, o dejar el negro/gris base */
+     background: radial-gradient(ellipse at center, #1f1f1f 0%, #050505 80%); /* Gradiente similar a #home pero ligeramente diferente */
+     border-top: 1px solid #222; /* Separador sutil opcional */
+}
+
+/* -- Título "About Me" (h2) -- */
+#about h2 {
+    font-size: 2.8rem;      /* Tamaño similar al h1 de home */
+    color: #f1c40f;          /* Color amarillo */
+    font-weight: 700;
+    margin-bottom: 1.5rem;   /* Espacio después del título */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra */
+    /* La alineación (text-center text-md-start) la controla Bootstrap */
+}
+
+/* -- Párrafo Descripción -- */
+#about p[data-lang-key="aboutDescription"] { /* Selector más específico */
+    font-size: 1.1rem;
+    color: #e0e0e0;         /* Mismo gris claro que en home */
+    line-height: 1.7;
+    margin-bottom: 2rem;    /* Espacio antes de la lista */
+}
+
+/* -- Imagen de About -- */
+#about img{
+    max-height: 450px;
+}
+#about img.rounded-circle {
+    border: 4px solid rgba(241, 196, 15, 0.6); /* Mismo borde amarillo */
+    box-shadow: 0 0 20px rgba(241, 196, 15, 0.3); /* Mismo brillo amarillo */
+    max-width: 85%; /* Evita que sea EXCESIVAMENTE grande en su col-md-6 */
+    height: auto; /* Mantiene proporción */
+    margin: 0 auto 1rem; /* Centrada y con margen inferior en móvil */
+}
+
+/* -- Lista de Información Personal -- */
+#about #personal-info {
+    margin-top: 1.5rem; /* Espacio arriba */
+    padding-left: 0; /* Quitar padding por defecto de ul */
+    list-style: none; /* Asegurar que no hay bullets */
+}
+
+#about #personal-info li {
+    color: #cccccc;       /* Un gris un poco más oscuro para la info */
+    margin-bottom: 0.8rem; /* Espacio entre items */
+    font-size: 1rem;
+}
+
+#about #personal-info li strong {
+    color: #e0e0e0;       /* Las etiquetas (Name:, Address:) un poco más brillantes */
+    margin-right: 0.5em;  /* Espacio después del strong */
+    display: inline-block; /* Permite controlar mejor el espaciado */
+    min-width: 120px;     /* Ancho mínimo para alinear un poco los valores (ajustar) */
+}
+
+/* --- Media Queries para #about (Ajustes responsivos) --- */
+
+@media (min-width: 768px) {
+    #about h2 {
+        font-size: 3.2rem; /* Más grande en pantallas medianas */
+    }
+     #about img.rounded-circle {
+         margin-bottom: 0; /* Quitar margen inferior en pantallas medianas+ */
+         max-width: 100%; /* Permitir que use todo el ancho de col-md-6 */
+     }
+     #about #personal-info {
+        margin-top: 2rem; /* Más espacio */
+    }
+}
+
+@media (min-width: 1400px) {
+    #about h2 {
+        font-size: 3.5rem; /* Un poco más grande */
+    }
+     #about #personal-info li {
+        font-size: 1.05rem; /* Texto de la lista un poco más grande */
+    }
+     #about #personal-info li strong {
+        min-width: 140px; /* Más espacio para las etiquetas */
+    }
+}
+
+/* ===== FIN DE ESTILOS PARA #about ===== */
+
+
+
+
+
+/* ===== Resume Section (#resume) - ESTILOS MEJORADOS ===== */
+
+#resume {
+    /* Fondo y borde consistentes con #about */
+    background: radial-gradient(ellipse at center, #1a1a1a 0%, #030303 80%);
+    border-top: 1px solid #222;
+    /* padding y margin heredados de 'section' */
+}
+
+/* -- Título Principal "Resume" (h2) -- */
+#resume h2 {
+    /* Estilo copiado de #about h2 para consistencia */
+    font-size: 2.8rem;
+    color: #f1c40f;
+    font-weight: 700;
+    margin-bottom: 3rem; /* Más espacio antes de las tarjetas */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* text-align: center; heredado de HTML */
+}
+
+/* -- Estilo Base de las Tarjetas del Resume -- */
+.resume-item.card {
+    background-color: #212121; /* Fondo gris oscuro para las tarjetas */
+    border: 1px solid #444;   /* Borde sutil gris más oscuro */
+    color: #f4f4f4;           /* Texto claro por defecto dentro de la tarjeta */
+    /* Eliminar la transición/hover de fondo claro del CSS anterior */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Transiciones suaves */
+    /* text-align: center; d-flex flex-column h-100; shadow-sm; vienen del HTML */
+}
+
+/* -- Título Dentro de Cada Tarjeta (h3) -- */
+.resume-item h3.resume-title { /* Añadida clase para especificidad si es necesario */
+    font-size: 1.3rem;   /* Tamaño adecuado para título de tarjeta */
+    color: #f1c40f;     /* Título en amarillo */
+    margin-bottom: 1rem; /* Espacio debajo del título */
+    font-weight: 700;
+    /* font-family: 'Poppins'; heredado */
+}
+
+/* -- Párrafos Dentro de Cada Tarjeta (p) -- */
+.resume-item p {
+    color: #cccccc;     /* Gris claro para el texto descriptivo */
+    font-size: 0.95rem; /* Tamaño legible pero no demasiado grande */
+    line-height: 1.6;
+    margin-bottom: 0.75rem; /* Espacio entre párrafos si hay varios */
+}
+
+/* Asegurar que los párrafos clickables tengan cursor pointer */
+.resume-item p[onclick] {
+     cursor: pointer;
+}
+
+/* -- Estilo Hover para las Tarjetas del Resume -- */
+.resume-item.card:hover {
+    transform: scale(1.03); /* Ligero zoom */
+    box-shadow: 0px 6px 15px rgba(241, 196, 15, 0.15); /* Sombra amarilla más sutil */
+    border-color: #f1c40f; /* Borde amarillo al pasar el ratón */
+    background-color: #2a2a2a; /* Fondo ligeramente más claro en hover */
+}
+
+/* -- Estilo Hover para Textos Clickables (Mantenido de tu CSS) -- */
+/* Asegura que esta regla siga presente si aplica a los <p> con clase .image-hover */
+.resume-item p.image-hover:hover { /* Selector más específico */
+    color: #f1c40f; /* Cambia a amarillo */
+    text-decoration: underline;
+    /* cursor: pointer; ya aplicado */
+}
+
+#resume > div{
+    margin: 10px; }
+/* --- Media Queries para #resume (Ajustes responsivos opcionales) --- */
+/* Podrías ajustar tamaños de fuente aquí si es necesario */
+
+@media (min-width: 768px) {
+    #resume h2 {
+        font-size: 3.2rem;
+    }
+    .resume-item h3.resume-title {
+        font-size: 1.4rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    #resume h2 {
+        font-size: 3.5rem;
+    }
+    .resume-item p {
+        font-size: 1rem;
+    }
+    #resume > div{
+        margin: 80px; }
+    }
+
+/* ===== FIN DE ESTILOS PARA #resume ===== */
+
+
+
+
+/* ===== Skills Section (#skills) - ESTILOS VISUALES ===== */
+
+/* Estilos para la sección (opcional, si quieres fondo/borde) */
+/* #skills {
+    background: radial-gradient(ellipse at center, #151515 0%, #000 80%);
+    border-top: 1px solid #222;
+} */
+
+/* -- Título Principal "My Skills" (h2) -- */
+#skills h2 {
+    /* Mismo estilo que otros títulos de sección */
+    font-size: 2.8rem;
+    color: #f1c40f;
+    font-weight: 700;
+    margin-bottom: 3rem; /* Aumenta si quieres más espacio antes de las skills */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* -- Contenedor de cada Skill (div.skill) -- */
+/* El espaciado vertical se controla con mb-4 en el HTML */
+
+
+/* -- Nombre de la Skill (span.skill-name) -- */
+.skill-name {
+    display: block; /* Para que ocupe su línea */
+    color: #e0e0e0; /* Gris claro */
+    font-size: 1.1rem;
+    font-weight: 700; /* Semi-bold */
+    margin-bottom: 0.6rem; /* Espacio antes de la barra */
+    /* font-family: 'Lato'; heredado */
+}
+
+/* -- Contenedor de la Barra de Progreso (.progress) -- */
+#skills .progress {
+    height: 30px;           /* Barra más gruesa */
+    background-color: #444; /* Fondo gris oscuro para la barra vacía */
+    border-radius: 15px;    /* Bordes más redondeados */
+    overflow: hidden;      /* Asegura que la barra interior no se salga */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.4); /* Sombra interior sutil */
+}
+
+/* -- Barra de Progreso Interior (.progress-bar) -- */
+#skills .progress-bar {
+    /* bg-warning, progress-bar-striped, progress-bar-animated vienen de HTML */
+    color: #333;           /* Texto oscuro para el porcentaje */
+    font-weight: bold;
+    font-size: 1rem;       /* Tamaño de fuente para el porcentaje */
+    line-height: 30px;     /* Centra verticalmente el texto (igual a height de .progress) */
+    text-align: center;     /* Centra horizontalmente el texto */
+    border-radius: 15px 0 0 15px; /* Redondeo solo a la izquierda/inicio */
+    transition: width 0.6s ease; /* Transición suave */
+}
+/* Quitar redondeo derecho si la barra está llena */
+#skills .progress-bar[style*="width: 100%"] {
+    border-radius: 15px;
 }
 
 
-
-/* Espaciado del texto para centrar mejor */
-#home .carousel-item h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+/* --- Media Queries Opcionales (Para ajustar fuentes si quieres) --- */
+@media (min-width: 768px) {
+    #skills h2 {
+        font-size: 3.2rem;
+    }
+     .skill-name {
+        font-size: 1.15rem;
+    }
+    /* Podrías hacer la barra un poco más fina en pantallas grandes si quisieras */
+    /* #skills .progress { height: 28px; } */
+    /* #skills .progress-bar { line-height: 28px; font-size: 0.95rem; } */
 }
 
-/* Alinear imágenes y aplicar sombra */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Efecto al pasar el ratón */
-.resume-item:hover {
-    background-color: #f8f9fa; /* Color suave al hacer hover */
-    border-color: #ffc107; /* Borde amarillo */
-    transform: scale(1.05);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+@media (min-width: 1400px) {
+    #skills h2 {
+        font-size: 3.5rem;
+    }
+    .skill-name {
+        font-size: 1.2rem;
+    }
+     /* Podrías hacer la barra aún más fina aquí */
+    /* #skills .progress { height: 25px; } */
+    /* #skills .progress-bar { line-height: 25px; font-size: 0.9rem; } */
 }
+
+
+/* ===== FIN DE ESTILOS PARA #skills (Solo Visual) ===== */
+
 
 
 
@@ -236,7 +508,28 @@ section {
     background: rgba(255, 193, 7, 0.8); /* Amarillo Bootstrap */
 }
 
+/* Opcional: Ajustes finos para el modal del proyecto */
+#project1Modal .modal-body p {
+    color: #e0e0e0; /* Mantener consistencia de color */
+    line-height: 1.7;
+}
 
+#project1Modal .modal-body hr {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Ajustar botones si es necesario */
+
+/* Hace que los elementos .project que abren modales tengan cursor de mano */
+.project[data-bs-toggle="modal"] {
+    cursor: pointer;
+}
+
+/* O usa la clase específica si la añadiste: */
+.project-modal-trigger {
+    cursor: pointer;
+}
 footer {
     background-color: #222;
     color: #bbb;

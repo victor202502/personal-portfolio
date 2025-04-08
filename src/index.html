@@ -51,86 +51,96 @@
             </div>
         </nav>
     </header>
-    <section id="home" class="container my-5 vh-100">
+    <!-- Seccion Home (Carrusel) con imagen más pequeña (col-md-5) -->
+    <section id="home" class="my-5">
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <!-- Slide 1 -->
                 <div class="carousel-item active">
                     <div class="row align-items-center">
-                        <!-- Texto -->
-                        <div class="col-12 col-md-6 text-center text-md-start">
+                        <!-- Texto (Ahora col-md-7) -->
+                        <div class="col-12 col-md-7 text-center text-md-start">
                             <h1 class="fw-bold" data-lang-key="hello">Hello, I'm Víctor Salgado</h1>
                             <p data-lang-key="homeDescription">I'm currently looking for an internship to complete my training as a Fachinformatiker Anwendungsentwicklung...</p>
                         </div>
-                        <!-- Imagen -->
-                        <div class="col-12 col-md-6 text-center">
-                            <img src="../images/bg_1.png" class="d-block img-fluid rounded-circle" alt="Image 1">
+                        <!-- Imagen (Ahora col-md-5) -->
+                        <div class="col-12 col-md-5 text-center">
+                            <img src="../images/carrousel1.png" class="d-block img-fluid rounded-circle" alt="Image 1">
                         </div>
                     </div>
                 </div>
                 <!-- Slide 2 -->
                 <div class="carousel-item">
                     <div class="row align-items-center">
-                        <!-- Texto -->
-                        <div class="col-12 col-md-6 text-center text-md-start">
+                        <!-- Texto (Ahora col-md-7) -->
+                        <div class="col-12 col-md-7 text-center text-md-start">
                             <h1 class="fw-bold" data-lang-key="looking">Looking for new opportunities!</h1>
                             <p data-lang-key="homeDescription2">If you're looking for someone with a passion for programming, commitment, and a willingness to learn, I would love to be part of your team! I'm ready to contribute and keep developing my skills.</p>
                         </div>
-                        <!-- Imagen -->
-                        <div class="col-12 col-md-6 text-center">
-                            <img src="../images/bg_2.png" class="d-block img-fluid rounded-circle" alt="Image 2">
+                        <!-- Imagen (Ahora col-md-5) -->
+                        <div class="col-12 col-md-5 text-center">
+                            <img src="../images/carrousel2.png" class="d-block img-fluid rounded-circle" alt="Image 2">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Controles del carrusel -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                data-bs-slide="prev">
+            <!-- Controles del carrusel (Sin cambios) -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
     </section>
 
+      <!-- La <section> NO tiene 'container', permitiendo fondo full-width -->
+<section id="about" class="my-5">
 
+    <!-- AÑADIMOS un 'container' AQUÍ para envolver el contenido del grid -->
+    <div class="container">
 
-    <section id="about" class="container my-5 vh-100">
+        <!-- Tu fila existente, ahora DENTRO del container -->
         <div class="row align-items-center">
-            <!-- Imagen -->
-            <div class="col-md-5 text-center">
-                <img src="../images/bg_2.png" alt="Your Image" class="d-block img-fluid rounded-circle">
+
+            <!-- Imagen (col-md-6) -->
+            <div class="col-md-6 text-center">
+                <!-- Clase 'about-image' si la usas en CSS -->
+                <img src="../images/about.png" alt="Your Image" class="d-block img-fluid rounded-circle about-image">
             </div>
 
-            <!-- Texto -->
-            <div class="col-md-7">
-                <div class="lang-content" data-lang="en">
+            <!-- Texto (col-md-6) -->
+            <!-- Clase 'about-text-column' si la usas en CSS -->
+            <div class="col-md-6 about-text-column">
+                <div class="lang-content">
                     <h2 class="text-center text-md-start" data-lang-key="aboutMe">About Me</h2>
                     <p class="text-center text-md-start" data-lang-key="aboutDescription">
                         I am looking for an internship for my vocational training in application development, with the interest to learn and apply my knowledge.
                     </p>
                 </div>
 
-               <!-- Lista de información personal -->
-<ul id="personal-info" class="list-unstyled">
-    <li><strong><span data-lang-key="nameLabel">Name:</span></strong> Victor Salgado</li>
-    <li>
-        <strong><span data-lang-key="dobLabel">Date of birth:</span></strong>
-        <!-- Nuevo span para la fecha, con la fecha original en data-date-value -->
-        <span data-date-value="1989-01-15">January 15, 1989</span>
-    </li>    <li><strong><span data-lang-key="addressLabel">Address:</span></strong> Frankfurter Landstraße 49 Darmstadt</li>
-    <li><strong><span data-lang-key="zipcodeLabel">Zip code:</span></strong> 64291</li>
-    <li><strong><span data-lang-key="emailLabel">Email:</span></strong> victorsalsa@hotmail.com</li>
-    <li><strong><span data-lang-key="phoneLabel">Phone:</span></strong> +49 1522 3758978</li>
-</ul>
+                <!-- Lista de información personal -->
+                <ul id="personal-info" class="list-unstyled">
+                    <li><strong><span data-lang-key="nameLabel">Name:</span></strong> Victor Salgado</li>
+                    <li>
+                        <strong><span data-lang-key="dobLabel">Date of birth:</span></strong>
+                        <span data-date-value="1989-01-15">January 15, 1989</span>
+                    </li>
+                    <li><strong><span data-lang-key="addressLabel">Address:</span></strong> Frankfurter Landstraße 49 Darmstadt</li>
+                    <li><strong><span data-lang-key="zipcodeLabel">Zip code:</span></strong> 64291</li>
+                    <li><strong><span data-lang-key="emailLabel">Email:</span></strong> victorsalsa@hotmail.com</li>
+                    <li><strong><span data-lang-key="phoneLabel">Phone:</span></strong> +49 1522 3758978</li>
+                </ul>
             </div>
-        </div>
-    </section>
+
+        </div> <!-- Fin del .row -->
+
+    </div> <!-- FIN del .container añadido -->
+
+</section>
 
 
    <!-- Modal Bootstrap for Image -->
@@ -146,7 +156,7 @@
 </div>
 
 <!-- Sección de Resume (SIN CAMBIOS EN LOS Auslöser, MANTIENE onclick) -->
-<section id="resume" class="container my-5">
+<section id="resume" class=" my-5">
     <h2 class="text-center mb-5 text-white display-4 fw-bold" data-lang-key="resume">Resume</h2>
     <div class="row g-4">
         <!-- Item 1: IT Specialist -->
@@ -449,129 +459,213 @@
 
 
 
-    <section id="skills" class="container my-5 vh-100">
-        <h2 class="text-center mb-4" data-lang-key="skills">My Skills</h2>
+<!-- ========================= Skills Section ========================= -->
+<section id="skills" class="my-5"> <!-- Quitamos 'container' de aquí si quieres fondo full-width -->
 
-        <div class="skill mb-3">HTML
+    <!-- Container interno para centrar y limitar el ancho del contenido -->
+    <div class="container">
+
+        <!-- Título de la Sección -->
+        <h2 class="text-center mb-5 text-white display-4 fw-bold" data-lang-key="skills">My Skills</h2>
+
+        <!-- Skill 1: HTML -->
+        <div class="skill mb-4"> <!-- mb-4 para separación vertical -->
+            <span class="skill-name">HTML</span> <!-- Nombre de la skill en un span -->
             <div class="progress">
                 <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated"
-                    style="width: 90%;">90%</div>
+                     role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
             </div>
         </div>
-        <div class="skill mb-3">CSS
-            <div class="progress">
-                <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated"
-                    style="width: 85%;">85%</div>
-            </div>
+
+        <!-- Skill 2: CSS -->
+        <div class="skill mb-4">
+             <span class="skill-name">CSS</span>
+             <div class="progress">
+                 <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated"
+                      role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+             </div>
         </div>
-        <div class="skill mb-3">Java
-            <div class="progress">
-                <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated"
-                    style="width: 70%;">70%</div>
-            </div>
+
+        <!-- Skill 3: Java -->
+        <div class="skill mb-4">
+             <span class="skill-name">Java</span>
+             <div class="progress">
+                 <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated"
+                      role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+             </div>
         </div>
-        <div class="skill mb-3">JavaScript
-            <div class="progress">
-                <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated"
-                    style="width: 80%;">80%</div>
-            </div>
+
+        <!-- Skill 4: JavaScript -->
+        <div class="skill mb-4">
+             <span class="skill-name">JavaScript</span>
+             <div class="progress">
+                 <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated"
+                      role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+             </div>
         </div>
-        <div class="skill mb-3">SQL
-            <div class="progress">
-                <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated"
-                    style="width: 75%;">75%</div>
-            </div>
+
+        <!-- Skill 5: SQL -->
+        <div class="skill mb-4">
+             <span class="skill-name">SQL</span>
+             <div class="progress">
+                 <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated"
+                      role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+             </div>
         </div>
-        <div class="skill mb-3">Node.js
-            <div class="progress">
-                <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated"
-                    style="width: 65%;">65%</div>
-            </div>
+
+        <!-- Skill 6: Node.js -->
+        <div class="skill mb-4"> <!-- Último elemento, mb-4 todavía útil si hay algo después -->
+             <span class="skill-name">Node.js</span>
+             <div class="progress">
+                 <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated"
+                      role="progressbar" style="width: 50%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">50%</div>
+             </div>
         </div>
-    </section>
+
+    </div> <!-- Fin del .container interno -->
+</section>
+<!-- ========================= Fin Skills Section ========================= -->
     
-
-    <section id="projects" class="container my-5 vh-100">
+<section id="projects" class="my-5"> <!-- Quitamos container si quieres fondo full-width -->
+    <div class="container"> <!-- Container INTERNO para contenido -->
         <div class="row">
-            <!-- Proyecto 1 (3 columnas en grande, 12 en pequeño) -->
+                    <!-- Proyecto 1 (Activador en div.project) -->
             <div class="col-lg-9 col-md-12 mb-4">
-                <a href="#" id="project-1" target="_blank" class="d-block text-decoration-none">
-                    <div class="project" style="background-image: url('../images/project-2.jpg');">
-                        <div class="project-overlay">Project 1</div>
-                    </div>
-                </a>
+                <!--
+                    1. Eliminamos la etiqueta <a> completamente.
+                    2. Ponemos los atributos data-bs-* DIRECTAMENTE en el div.project.
+                    3. Añadimos una clase o CSS para cursor: pointer.
+                -->
+                <div class="project project-modal-trigger" 
+                     style="background-image: url('../images/project-2.jpg');"
+                     data-bs-toggle="modal"
+                     data-bs-target="#project1Modal">
+                        <div class="project-overlay" data-lang-key="project1Name">Cuestionario</div>
+                </div>
+                <!-- NO hay más elementos duplicados ni <a> sueltas aquí -->
             </div>
-            <!-- Proyecto 2 (1 columna en grande, 12 en pequeño) -->
+            <!-- Proyecto 2 (sin cambios) -->
             <div class="col-lg-3 col-md-12 mb-4">
                 <a href="#" id="project-2" target="_blank" class="d-block text-decoration-none">
                     <div class="project" style="background-image: url('../images/project-1.jpg');">
-                        <div class="project-overlay">Project 2</div>
+                        <div class="project-overlay" data-lang-key="project2Name">Project 2</div>
                     </div>
                 </a>
             </div>
         </div>
         <div class="row">
-            <!-- Proyecto 3 (1 columna en grande, 12 en pequeño) -->
+            <!-- Proyecto 3 (sin cambios) -->
             <div class="col-lg-3 col-md-12 mb-4">
                 <a href="#" id="project-3" target="_blank" class="d-block text-decoration-none">
                     <div class="project" style="background-image: url('../images/project-3.jpg');">
-                        <div class="project-overlay">Project 3</div>
+                        <div class="project-overlay" data-lang-key="project3Name">Project 3</div>
                     </div>
                 </a>
             </div>
-            <!-- Proyecto 4 (3 columnas en grande, 12 en pequeño) -->
+            <!-- Proyecto 4 (sin cambios) -->
             <div class="col-lg-9 col-md-12 mb-4">
                 <a href="#" id="project-4" target="_blank" class="d-block text-decoration-none">
                     <div class="project" style="background-image: url('../images/project-4.jpg');">
-                        <div class="project-overlay">Project 4</div>
+                        <div class="project-overlay" data-lang-key="project4Name">Project 4</div>
                     </div>
                 </a>
             </div>
         </div>
-    </section>
-    
-    
-    
+    </div> <!-- Fin container interno -->
+</section>
+
+<!-- El HTML del Modal (que ya tenías) va aquí o al final del body -->
+<!-- ========================= Modal para Proyecto 1 ========================= -->
+<div class="modal fade" id="project1Modal" tabindex="-1" aria-labelledby="project1ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-light">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title text-warning" id="project1ModalLabel" data-lang-key="project1ModalTitle">
+                    <i class="bi bi-clipboard-check-fill me-2"></i>Interactive Quiz
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p data-lang-key="project1ModalDesc">
+                    This project is a full-stack interactive quiz application. The frontend is built with HTML, CSS (using Bootstrap for responsive design), and vanilla JavaScript. The backend is developed with Node.js and Express, and it includes user authentication using bcrypt for password hashing. User data and quiz progress are stored in a connected database (e.g., MongoDB or another preferred solution).
+
+                    Users can register via a signup form or log in with test credentials (`user11` / `user11`). Once authenticated, users can access the quiz interface, answer multiple-choice questions, and their results and progress are saved for future sessions. The project focuses on DOM manipulation, conditional logic, user state management, and secure handling of user credentials.
+                </p>
+                <hr class="border-secondary">
+                <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-4">
+                     <a href="https://github.com/your-username/your-quiz-repo" target="_blank" rel="noopener noreferrer" class="btn btn-outline-warning">
+                         <i class="bi bi-github me-2"></i><span data-lang-key="viewCodeBtn">GitHub Repository</span>
+                     </a>
+                     <a href="https://your-username.github.io/your-quiz-repo/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-warning">
+                         <i class="bi bi-box-arrow-up-right me-2"></i><span data-lang-key="viewProjectBtn">Open Quiz</span>
+                     </a>
+                </div>
+            </div>
+            <div class="modal-footer border-secondary">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ========================= Fin Modal Proyecto 1 ========================= -->
 
 
 
 
    <!-- Contact Icons Section -->
-<section id="contact-info" class="container my-5"> <!-- Changed ID slightly to avoid conflict with form section -->
-    <h2 class="text-center mb-5 text-white display-4 fw-bold" data-lang-key="contact">Contact</h2> <!-- Added Section Title -->
-    <div class="row text-center">
+<section id="contact-info" class="container my-5">
+    <h2 class="text-center mb-5 text-white display-4 fw-bold" data-lang-key="contact">Contact</h2>
+    <!-- Añadido justify-content-lg-center para centrar la última fila en pantallas grandes -->
+    <div class="row text-center justify-content-lg-center">
+
         <!-- Dirección -->
-        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+        <!-- Clases cambiadas: col-12 (o sm-12), col-md-6, col-lg-4 -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
             <div class="contact-item p-4" data-bs-toggle="modal" data-bs-target="#addressModal">
                 <i class="bi bi-geo-alt-fill icon"></i>
                 <div class="text" data-lang-key="address">Address</div>
             </div>
         </div>
+
         <!-- Teléfono -->
-        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+        <!-- Clases cambiadas: col-12 (o sm-12), col-md-6, col-lg-4 -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
             <div class="contact-item p-4" data-bs-toggle="modal" data-bs-target="#phoneModal">
                 <i class="bi bi-telephone-fill icon"></i>
                 <div class="text" data-lang-key="phone">Phone</div>
             </div>
         </div>
+
         <!-- Email -->
-        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+        <!-- Clases cambiadas: col-12 (o sm-12), col-md-6, col-lg-4 -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
             <div class="contact-item p-4" data-bs-toggle="modal" data-bs-target="#emailModal">
                 <i class="bi bi-envelope-fill icon"></i>
                 <div class="text" data-lang-key="email">Email</div>
             </div>
         </div>
+
         <!-- LinkedIn -->
-        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+        <!-- Clases cambiadas: col-12 (o sm-12), col-md-6, col-lg-4 -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
             <div class="contact-item p-4" data-bs-toggle="modal" data-bs-target="#linkedinModal">
                 <i class="bi bi-linkedin icon"></i>
                 <div class="text" data-lang-key="linkedin">LinkedIn</div>
             </div>
         </div>
-    </div>
-</section>
 
-<!-- Contact Modal Templates -->
+        <!-- GitHub -->
+        <!-- Clases cambiadas: col-12 (o sm-12), col-md-6, col-lg-4 -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="contact-item p-4" data-bs-toggle="modal" data-bs-target="#githubModal">
+                <i class="bi bi-github icon"></i>
+                <div class="text" data-lang-key="github">GitHub</div>
+            </div>
+        </div>
+
+    </div> <!-- Fin de .row -->
+</section>
+<!-- Contact Modal Templates (UPDATED) -->
+
 <!-- Address Modal -->
 <div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="addressModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -584,14 +678,15 @@
                 <div class="d-flex flex-column align-items-center">
                     <a href="https://www.google.de/maps/place/Frankfurter+Str.+49,+64293+Darmstadt/"
                         target="_blank" class="custom-link mb-3">
-                        Frankfurter Str. 49, 64293 Darmstadt <!-- Address itself is usually not translated -->
+                        Frankfurter Str. 49, 64293 Darmstadt
                     </a>
                     <button class="btn btn-outline-primary mt-3"
                         onclick="copyToClipboard('Frankfurter Str. 49, 64293 Darmstadt', this)"
-                        data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-placement="top"
                         data-bs-title-en="Copied to clipboard!"
                         data-bs-title-es="¡Copiado al portapapeles!"
                         data-bs-title-de="In die Zwischenablage kopiert!">
+                        <!-- data-bs-toggle="tooltip" REMOVED -->
                         <i class="bi bi-clipboard"></i> <span data-lang-key="copyBtn">Copy</span>
                     </button>
                 </div>
@@ -610,13 +705,14 @@
             </div>
             <div class="modal-body text-center">
                 <div class="d-flex flex-column align-items-center">
-                    <a href="tel:+4915223758978" class="custom-link mb-3">+49 1522 3758978</a> <!-- Actual phone number -->
+                    <a href="tel:+4915223758978" class="custom-link mb-3">+49 1522 3758978</a>
                     <button class="btn btn-outline-primary mt-3"
-                        onclick="copyToClipboard('+4915223758978', this)" data-bs-toggle="tooltip"
+                        onclick="copyToClipboard('+4915223758978', this)"
                         data-bs-placement="top"
                         data-bs-title-en="Copied to clipboard!"
                         data-bs-title-es="¡Copiado al portapapeles!"
                         data-bs-title-de="In die Zwischenablage kopiert!">
+                         <!-- data-bs-toggle="tooltip" REMOVED -->
                         <i class="bi bi-clipboard"></i> <span data-lang-key="copyBtn">Copy</span>
                     </button>
                 </div>
@@ -635,13 +731,14 @@
             </div>
             <div class="modal-body text-center">
                 <div class="d-flex flex-column align-items-center">
-                    <a href="mailto:victorsalsa@hotmail.com" class="custom-link mb-3">victorsalsa@hotmail.com</a> <!-- Actual email -->
+                    <a href="mailto:victorsalsa@hotmail.com" class="custom-link mb-3">victorsalsa@hotmail.com</a>
                     <button class="btn btn-outline-primary mt-3"
-                        onclick="copyToClipboard('victorsalsa@hotmail.com', this)" data-bs-toggle="tooltip"
+                        onclick="copyToClipboard('victorsalsa@hotmail.com', this)"
                         data-bs-placement="top"
                         data-bs-title-en="Copied to clipboard!"
                         data-bs-title-es="¡Copiado al portapapeles!"
                         data-bs-title-de="In die Zwischenablage kopiert!">
+                         <!-- data-bs-toggle="tooltip" REMOVED -->
                         <i class="bi bi-clipboard"></i> <span data-lang-key="copyBtn">Copy</span>
                     </button>
                 </div>
@@ -650,7 +747,7 @@
     </div>
 </div>
 
-<!-- LinkedIn Modal -->
+<!-- LinkedIn Modal (Updated Style) -->
 <div class="modal fade" id="linkedinModal" tabindex="-1" aria-labelledby="linkedinModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content p-4">
@@ -659,17 +756,52 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center">
-                 <!-- Update href with your actual LinkedIn profile -->
-                <a href="https://www.linkedin.com/in/victor-salgado-a45834182/" target="_blank" class="btn btn-success">
-                    <i class="bi bi-linkedin"></i> <span data-lang-key="visitLinkedInBtn">Visit LinkedIn</span>
-                </a>
+                <div class="d-flex flex-column align-items-center">
+                    <a href="https://www.linkedin.com/in/victor-salgado-699632357" target="_blank" class="custom-link mb-3">
+                        LinkedIn <!-- Adjust display text as needed -->
+                    </a>
+                    <button class="btn btn-outline-primary mt-3"
+                        onclick="copyToClipboard('www.linkedin.com/in/victor-salgado-699632357', this)"
+                        data-bs-placement="top"
+                        data-bs-title-en="Copied to clipboard!"
+                        data-bs-title-es="¡Copiado al portapapeles!"
+                        data-bs-title-de="In die Zwischenablage kopiert!">
+                         <!-- data-bs-toggle="tooltip" REMOVED -->
+                        <i class="bi bi-clipboard"></i> <span data-lang-key="copyBtn">Copy</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Copied Message (If used separately from tooltip) -->
-<div id="copyMessage" class="copy-message" data-lang-key="copiedMsg">Copied to clipboard!</div>
+<!-- GitHub Modal (Updated Style) -->
+<div class="modal fade" id="githubModal" tabindex="-1" aria-labelledby="githubModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-4">
+            <div class="modal-header">
+                <h5 class="modal-title" id="githubModalLabel" data-lang-key="github">GitHub</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="d-flex flex-column align-items-center">
+                    <a href="https://github.com/victor202502" target="_blank" class="custom-link mb-3">
+                        GitHub <!-- Adjust display text as needed -->
+                    </a>
+                    <button class="btn btn-outline-primary mt-3"
+                        onclick="copyToClipboard('https://github.com/victor202502', this)"
+                        data-bs-placement="top"
+                        data-bs-title-en="Copied to clipboard!"
+                        data-bs-title-es="¡Copiado al portapapeles!"
+                        data-bs-title-de="In die Zwischenablage kopiert!">
+                         <!-- data-bs-toggle="tooltip" REMOVED -->
+                        <i class="bi bi-clipboard"></i> <span data-lang-key="copyBtn">Copy</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Contact Form Section -->
 <section id="contact-form-section" class="container my-5"> <!-- Changed ID -->
