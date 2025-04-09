@@ -857,37 +857,37 @@ border-radius: 10px;    background-color: #212121; /* Fondo oscuro en el encabez
 /* Background Image Assignments - Pseudo-element */
 .job-item-xella::before,
 #job1Modal .modal-content::before {
-    background-image: url('../images/xella.jpg');
+    background-image: url('images/xella.jpg');
 }
 
 .job-item-reso::before,
 #job2Modal .modal-content::before {
-    background-image: url('../images/reso.jpg');
+    background-image: url('images/reso.jpg');
 }
 
 .job-item-markilux::before,
 #job3Modal .modal-content::before {
-    background-image: url('../images/markilux_logo.png');
+    background-image: url('images/markilux_logo.png');
 }
 
 .job-item-worms::before,
 #job4Modal .modal-content::before {
-    background-image: url('../images/Firmenlogo-frei_m.webp');
+    background-image: url('images/Firmenlogo-frei_m.webp');
 }
 
 .job-item-eptisa::before,
 #job5Modal .modal-content::before {
-    background-image: url('../images/eptisa.jpg');
+    background-image: url('images/eptisa.jpg');
 }
 
 .job-item-viten::before,
 #job6Modal .modal-content::before {
-    background-image: url('../images/viten.png');
+    background-image: url('images/viten.png');
 }
 
 .job-item-verino::before,
 #job7Modal .modal-content::before {
-    background-image: url('../images/verino.png');
+    background-image: url('images/verino.png');
 }
 
 
@@ -914,7 +914,7 @@ border-radius: 10px;    background-color: #212121; /* Fondo oscuro en el encabez
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../images/xella.jpg');
+    background-image: url('images/xella.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.2;
@@ -943,7 +943,7 @@ border-radius: 10px;    background-color: #212121; /* Fondo oscuro en el encabez
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../images/reso.jpg');
+    background-image: url('images/reso.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.2;
@@ -972,7 +972,7 @@ border-radius: 10px;    background-color: #212121; /* Fondo oscuro en el encabez
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../images/markilux_logo.png');
+    background-image: url('images/markilux_logo.png');
     background-size: cover;
     background-position: center;
     opacity: 0.2;
@@ -1001,7 +1001,7 @@ border-radius: 10px;    background-color: #212121; /* Fondo oscuro en el encabez
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../images/Firmenlogo-frei_m.webp');
+    background-image: url('images/Firmenlogo-frei_m.webp');
     background-size: cover;
     background-position: center;
     opacity: 0.2;
@@ -1030,7 +1030,7 @@ border-radius: 10px;    background-color: #212121; /* Fondo oscuro en el encabez
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../images/eptisa.jpg');
+    background-image: url('images/eptisa.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.2;
@@ -1059,7 +1059,7 @@ border-radius: 10px;    background-color: #212121; /* Fondo oscuro en el encabez
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../images/viten.png');
+    background-image: url('images/viten.png');
     background-size: cover;
     background-position: center;
     opacity: 0.2;
@@ -1088,7 +1088,7 @@ border-radius: 10px;    background-color: #212121; /* Fondo oscuro en el encabez
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../images/verino.png');
+    background-image: url('images/verino.png');
     background-size: cover;
     background-position: center;
     opacity: 0.2;
