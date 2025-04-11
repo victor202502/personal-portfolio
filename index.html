@@ -528,32 +528,33 @@
 <section id="projects" class="my-5"> <!-- Quitamos container si quieres fondo full-width -->
     <div class="container"> <!-- Container INTERNO para contenido -->
         <div class="row">
-                    <!-- Proyecto 1 (Activador en div.project) -->
+            <!-- Proyecto 1 (Activador en div.project) -->
             <div class="col-lg-9 col-md-12 mb-4">
-                <!--
-                    1. Eliminamos la etiqueta <a> completamente.
-                    2. Ponemos los atributos data-bs-* DIRECTAMENTE en el div.project.
-                    3. Añadimos una clase o CSS para cursor: pointer.
-                -->
-                <div class="project project-modal-trigger" 
+                <div class="project project-modal-trigger"
                      style="background-image: url('images/project-2.jpg');"
                      data-bs-toggle="modal"
                      data-bs-target="#project1Modal">
                         <div class="project-overlay" data-lang-key="project1Name">Cuestionario</div>
                 </div>
-                <!-- NO hay más elementos duplicados ni <a> sueltas aquí -->
             </div>
-            <!-- Proyecto 2 (sin cambios) -->
+
+            <!-- Proyecto 2 (Activador en div.project - MODIFICADO) -->
             <div class="col-lg-3 col-md-12 mb-4">
-                <a href="#" id="project-2" target="_blank" class="d-block text-decoration-none">
-                    <div class="project" style="background-image: url('images/project-1.jpg');">
-                        <div class="project-overlay" data-lang-key="project2Name">Project 2</div>
-                    </div>
-                </a>
+                <!--
+                    1. Eliminamos la etiqueta <a>.
+                    2. Ponemos los atributos data-bs-* DIRECTAMENTE en el div.project.
+                    3. Añadimos la clase project-modal-trigger para cursor: pointer y consistencia.
+                -->
+                <div class="project project-modal-trigger"
+                     style="background-image: url('images/project-1.jpg');"
+                     data-bs-toggle="modal"
+                     data-bs-target="#project2Modal"> 
+                        <div class="project-overlay" data-lang-key="project2Name">React Chat App</div> 
+                </div>
             </div>
         </div>
         <div class="row">
-            <!-- Proyecto 3 (sin cambios) -->
+            <!-- Proyecto 3 (sin cambios - podría modificarse igual si se necesita modal) -->
             <div class="col-lg-3 col-md-12 mb-4">
                 <a href="#" id="project-3" target="_blank" class="d-block text-decoration-none">
                     <div class="project" style="background-image: url('images/project-3.jpg');">
@@ -561,7 +562,7 @@
                     </div>
                 </a>
             </div>
-            <!-- Proyecto 4 (sin cambios) -->
+            <!-- Proyecto 4 (sin cambios - podría modificarse igual si se necesita modal) -->
             <div class="col-lg-9 col-md-12 mb-4">
                 <a href="#" id="project-4" target="_blank" class="d-block text-decoration-none">
                     <div class="project" style="background-image: url('images/project-4.jpg');">
@@ -573,8 +574,9 @@
     </div> <!-- Fin container interno -->
 </section>
 
-<!-- El HTML del Modal (que ya tenías) va aquí o al final del body -->
-<!-- ========================= Modal para Proyecto 1 ========================= -->
+<!-- ========================= Modales (Colocar al final del body o después de la sección) ========================= -->
+
+<!-- ========================= Modal para Proyecto 1 (Existente) ========================= -->
 <div class="modal fade" id="project1Modal" tabindex="-1" aria-labelledby="project1ModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content bg-dark text-light">
@@ -601,6 +603,40 @@
                 </div>
             </div>
             <div class="modal-footer border-secondary">
+                 <!-- Puedes añadir un botón de cierre extra aquí si quieres -->
+                 <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ========================= Modal para Proyecto 2 (NUEVO) ========================= -->
+<div class="modal fade" id="project2Modal" tabindex="-1" aria-labelledby="project2ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-light">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title text-warning" id="project2ModalLabel" data-lang-key="project2ModalTitle">
+                    <i class="bi bi-chat-dots-fill me-2"></i>React Messaging App 
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p data-lang-key="project2ModalDesc"> 
+                    This is a full-stack real-time messaging application. The frontend is built using React, leveraging component-based architecture and state management for a dynamic user interface. The backend (e.g., Node.js/Express with Socket.IO) handles WebSocket connections for real-time communication, user authentication, and message persistence. User data, conversations, and messages are stored in a connected database. The application allows users to sign up, log in, see online users (optional), join chat rooms or direct messages, and exchange messages instantly.
+                </p>
+                <hr class="border-secondary">
+                <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-4">
+                   
+                     <a href="https://github.com/victor202502/Mensajes" target="_blank" rel="noopener noreferrer" class="btn btn-outline-warning">
+                         <i class="bi bi-github me-2"></i><span data-lang-key="viewCodeBtn">GitHub Repository</span>
+                     </a>
+                     <a href="https://mensajes-1.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline-warning">
+                         <i class="bi bi-box-arrow-up-right me-2"></i><span data-lang-key="viewProjectBtn">Open App</span>
+                     </a>
+                </div>
+            </div>
+            <div class="modal-footer border-secondary">
+                 <!-- Puedes añadir un botón de cierre extra aquí si quieres -->
             </div>
         </div>
     </div>

@@ -70,9 +70,13 @@ const translations = {
         // Proyects...
         project1Name: "Interactive Quiz", 
         project1ModalTitle: "Interactive Quiz",
-    project1ModalDesc: "This project is a full-stack interactive quiz application. The frontend is built with HTML, CSS (using Bootstrap for responsive design), and vanilla JavaScript. The backend is developed with Node.js and Express, and it includes user authentication using bcrypt for password hashing. User data and quiz progress are stored in a PostgreSQL database integrated via the hosting platform Render.\n\nUsers can register via a signup form or log in with test credentials (`user11` / `user11`). Once authenticated, users can access the quiz interface, answer multiple-choice questions, and their results and progress are saved for future sessions. The project focuses on DOM manipulation, conditional logic, user state management, and secure handling of user credentials.",
-    viewCodeBtn: "GitHub Repository",
-    viewProjectBtn: "Open Quiz"
+        project1ModalDesc: "This project is a full-stack interactive quiz application. The frontend is built with HTML, CSS (using Bootstrap for responsive design), and vanilla JavaScript. The backend is developed with Node.js and Express, and it includes user authentication using bcrypt for password hashing. User data and quiz progress are stored in a PostgreSQL database integrated via the hosting platform Render.\n\nUsers can register via a signup form or log in with test credentials (`user11` / `user11`). Once authenticated, users can access the quiz interface, answer multiple-choice questions, and their results and progress are saved for future sessions. The project focuses on DOM manipulation, conditional logic, user state management, and secure handling of user credentials.",
+        viewCodeBtn: "GitHub Repository",
+        viewProjectBtn: "Open Web",
+        project2Name: "React Messaging App", 
+    project2ModalTitle: "React Messaging App",
+    project2ModalDesc: "This is a full-stack real-time messaging application. The frontend is built using React, utilizing a component-based architecture and efficient state management to provide a dynamic and responsive user interface. The backend, powered by Node.js and Express with Socket.IO, manages WebSocket connections for real-time communication, user authentication, and message persistence. User data, conversations, and messages are stored in a connected database. Users can sign up, log in, and view a list of other users. They can select a recipient to view their message history and initiate or continue direct conversations. The application supports real-time message exchange, making it easy to chat instantly with other users.",
+    
     },
     es: {
          // --- Existing Keys ---
@@ -118,7 +122,12 @@ const translations = {
         project1ModalTitle: "Quiz Interactivo",
         project1ModalDesc: "Este proyecto es una aplicación de cuestionario interactiva full-stack. El frontend está desarrollado con HTML, CSS (usando Bootstrap para diseño responsivo) y JavaScript puro. El backend está construido con Node.js y Express, e incluye autenticación de usuarios usando bcrypt para el hash de contraseñas. Los datos del usuario y el progreso del quiz se almacenan en una base de datos PostgreSQL integrada mediante la plataforma de alojamiento Render.\n\nLos usuarios pueden registrarse a través de un formulario de inscripción o iniciar sesión con credenciales de prueba (`user11` / `user11`). Una vez autenticados, pueden acceder a la interfaz del quiz, responder preguntas de opción múltiple, y sus resultados y progreso se guardan para futuras sesiones. El proyecto se enfoca en la manipulación del DOM, lógica condicional, gestión del estado del usuario y manejo seguro de credenciales.",
         viewCodeBtn: "Repositorio GitHub",
-        viewProjectBtn: "Abrir Quiz"
+        viewProjectBtn: "Abrir Web",
+        project2Name: "Aplicación de Mensajería React", 
+
+        project2ModalTitle: "Aplicación de Mensajería React",
+        project2ModalDesc: "Esta es una aplicación de mensajería en tiempo real full-stack. El frontend está desarrollado con React, utilizando una arquitectura basada en componentes y una gestión eficiente del estado para ofrecer una interfaz de usuario dinámica y responsiva. El backend, basado en Node.js y Express con Socket.IO, gestiona las conexiones WebSocket para la comunicación en tiempo real, la autenticación de usuarios y la persistencia de mensajes. Los datos de usuarios, conversaciones y mensajes se almacenan en una base de datos conectada. Los usuarios pueden registrarse, iniciar sesión y ver una lista de otros usuarios. Pueden seleccionar un destinatario para ver el historial de mensajes y comenzar o continuar conversaciones directas. La aplicación permite el intercambio de mensajes en tiempo real de forma instantánea.",
+       
     },
     de: {
          // --- Existing Keys ---
@@ -163,7 +172,13 @@ const translations = {
         project1ModalTitle: "Interaktives Quiz",
         project1ModalDesc: "Dieses Projekt ist eine Full-Stack-Quizanwendung. Das Frontend wurde mit HTML, CSS (unter Verwendung von Bootstrap für responsives Design) und Vanilla JavaScript erstellt. Das Backend wurde mit Node.js und Express entwickelt und beinhaltet eine Benutzer-Authentifizierung mit bcrypt zur Passwortverschlüsselung. Benutzerdaten und Quizfortschritte werden in einer PostgreSQL-Datenbank gespeichert, die über die Hosting-Plattform Render integriert ist.\n\nBenutzer können sich über ein Anmeldeformular registrieren oder sich mit Test-Zugangsdaten anmelden (`user11` / `user11`). Nach erfolgreicher Authentifizierung erhalten sie Zugriff auf die Quiz-Oberfläche, können Multiple-Choice-Fragen beantworten und ihre Ergebnisse und Fortschritte werden für zukünftige Sitzungen gespeichert. Das Projekt konzentriert sich auf DOM-Manipulation, bedingte Logik, Benutzerzustandsverwaltung und sichere Handhabung von Benutzeranmeldeinformationen.",
         viewCodeBtn: "GitHub-Repository",
-        viewProjectBtn: "Quiz öffnen"
+        viewProjectBtn: "Web öffnen",
+        project2Name: "React-Nachrichten-App", 
+        project2ModalTitle: "React-Nachrichten-App",
+        project2ModalDesc: "Dies ist eine Full-Stack-Messaging-Anwendung in Echtzeit. Das Frontend wurde mit React entwickelt und nutzt eine komponentenbasierte Architektur sowie eine effiziente Zustandsverwaltung, um eine dynamische und reaktionsfähige Benutzeroberfläche bereitzustellen. Das Backend, basierend auf Node.js und Express mit Socket.IO, verwaltet WebSocket-Verbindungen für die Echtzeitkommunikation, Benutzerauthentifizierung und Nachrichtenpersistenz. Benutzerdaten, Konversationen und Nachrichten werden in einer verbundenen Datenbank gespeichert. Benutzer können sich registrieren, anmelden und eine Liste anderer Benutzer anzeigen. Sie können einen Empfänger auswählen, um den bisherigen Nachrichtenverlauf einzusehen und Direktnachrichten zu starten oder fortzusetzen. Die Anwendung unterstützt den sofortigen Nachrichtenaustausch in Echtzeit.",
+         
+
+        
         
     }
 };
