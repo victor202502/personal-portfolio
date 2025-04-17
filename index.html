@@ -743,6 +743,14 @@
             </div>
         </div>
 
+                <!-- CV/Resume Download -->
+        <!-- Clases cambiadas: col-12 (o sm-12), col-md-6, col-lg-4 -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="contact-item p-4" data-bs-toggle="modal" data-bs-target="#cvModal">
+                <i class="bi bi-file-earmark-person-fill icon"></i> <!-- Changed icon -->
+                <div class="text" data-lang-key="cv">CV / Resume</div> <!-- Changed text and key -->
+            </div>
+        </div>
     </div> <!-- Fin de .row -->
 </section>
 <!-- Contact Modal Templates (UPDATED) -->
@@ -883,6 +891,31 @@
         </div>
     </div>
 </div>
+
+<!-- CV/Resume Modal -->
+<div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-4">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cvModalLabel" data-lang-key="cv">CV / Resume</h5> <!-- Changed title and key -->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="d-flex flex-column align-items-center">
+                    <!-- Link to view the CV (optional, remove if not needed) -->
+                    <a href="downloads\Lebenslauf victor 2025.pdf" target="_blank" class="custom-link mb-3" data-lang-key="viewCvLink">
+                        View CV Online
+                    </a>
+                    <!-- Download Button -->
+                    <a href="downloads\Lebenslauf victor 2025.pdf" download="Victor_Salgado_CV.pdf" class="btn btn-outline-primary mt-3">
+                        <i class="bi bi-download"></i> <span data-lang-key="downloadBtn">Download PDF</span> <!-- Changed text and key -->
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <!-- Contact Form Section -->
 <section id="contact-form-section" class="container my-5"> <!-- Changed ID -->

@@ -86,7 +86,10 @@ const translations = {
         project3Req1: "Requires Java Runtime Environment (JRE) version 18 or higher installed on the system.",
         project3Req2: "Download the executable JAR file and run it from the command line using: <code>java -jar YourAppName.jar</code> (replace YourAppName.jar with the actual downloaded file name).",
         viewCodeBtn: "GitHub Repository",
-        downloadAppBtn: "Download JAR"
+        downloadAppBtn: "Download JAR",
+        cv: "CV / Resume",
+        viewCvLink: "View CV Online",
+        downloadBtn: "Download PDF",
     },
     es: {
          // --- Existing Keys ---
@@ -147,7 +150,11 @@ const translations = {
         project3Req1: "Requiere Java Runtime Environment (JRE) versión 18 o superior instalado en el sistema.",
         project3Req2: "Descarga el archivo JAR ejecutable y ejecútalo desde la línea de comandos usando: <code>java -jar TuAppName.jar</code> (reemplaza TuAppName.jar con el nombre real del archivo descargado).",
         viewCodeBtn: "Repositorio GitHub",
-        downloadAppBtn: "Descargar JAR"
+        downloadAppBtn: "Descargar JAR",
+        cv: "CV / Currículum",
+        viewCvLink: "Ver CV Online",
+        downloadBtn: "Descargar PDF",
+        
     },
     de: {
          // --- Existing Keys ---
@@ -206,7 +213,10 @@ const translations = {
         project3Req1: "Benötigt Java Runtime Environment (JRE) Version 18 oder höher auf dem System installiert.",
         project3Req2: "Laden Sie die ausführbare JAR-Datei herunter und führen Sie sie über die Befehlszeile aus mit: <code>java -jar IhrAppName.jar</code> (ersetzen Sie IhrAppName.jar durch den tatsächlichen Namen der heruntergeladenen Datei).",
         viewCodeBtn: "GitHub-Repository",
-        downloadAppBtn: "JAR herunterladen"
+        downloadAppBtn: "JAR herunterladen",
+        cv: "Lebenslauf",
+        viewCvLink: "Lebenslauf Online ansehen",
+        downloadBtn: "PDF Herunterladen",
          
 
         
