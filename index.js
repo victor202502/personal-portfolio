@@ -74,9 +74,19 @@ const translations = {
         viewCodeBtn: "GitHub Repository",
         viewProjectBtn: "Open Web",
         project2Name: "React Messaging App", 
-    project2ModalTitle: "React Messaging App",
-    project2ModalDesc: "This is a full-stack real-time messaging application. The frontend is built using React, utilizing a component-based architecture and efficient state management to provide a dynamic and responsive user interface. The backend, powered by Node.js and Express with Socket.IO, manages WebSocket connections for real-time communication, user authentication, and message persistence. User data, conversations, and messages are stored in a connected database. Users can sign up, log in, and view a list of other users. They can select a recipient to view their message history and initiate or continue direct conversations. The application supports real-time message exchange, making it easy to chat instantly with other users.",
-    
+        project2ModalTitle: "React Messaging App",
+        project2ModalDesc: "This is a full-stack real-time messaging application. The frontend is built using React, utilizing a component-based architecture and efficient state management to provide a dynamic and responsive user interface. The backend, powered by Node.js and Express with Socket.IO, manages WebSocket connections for real-time communication, user authentication, and message persistence. User data, conversations, and messages are stored in a connected database. Users can sign up, log in, and view a list of other users. They can select a recipient to view their message history and initiate or continue direct conversations. The application supports real-time message exchange, making it easy to chat instantly with other users.",
+        project3Name: "JavaFX Paint App",
+        project3ModalTitle: "Modern JavaFX Paint Application",
+        project3ModalDesc: `This is a desktop paint application developed using Java with the JavaFX framework for the graphical user interface.
+                        It utilizes Maven for project build and dependency management.
+                        The application provides basic drawing functionalities including a pen tool, eraser, shape tools (rectangle, oval), color selection, and line width adjustment.
+                        Users can save their creations as PNG image files and load existing PNGs back into the canvas.
+                        The canvas supports zooming and panning for better navigation on larger drawings.`,
+        project3Req1: "Requires Java Runtime Environment (JRE) version 18 or higher installed on the system.",
+        project3Req2: "Download the executable JAR file and run it from the command line using: <code>java -jar YourAppName.jar</code> (replace YourAppName.jar with the actual downloaded file name).",
+        viewCodeBtn: "GitHub Repository",
+        downloadAppBtn: "Download JAR"
     },
     es: {
          // --- Existing Keys ---
@@ -127,7 +137,17 @@ const translations = {
 
         project2ModalTitle: "Aplicación de Mensajería React",
         project2ModalDesc: "Esta es una aplicación de mensajería en tiempo real full-stack. El frontend está desarrollado con React, utilizando una arquitectura basada en componentes y una gestión eficiente del estado para ofrecer una interfaz de usuario dinámica y responsiva. El backend, basado en Node.js y Express con Socket.IO, gestiona las conexiones WebSocket para la comunicación en tiempo real, la autenticación de usuarios y la persistencia de mensajes. Los datos de usuarios, conversaciones y mensajes se almacenan en una base de datos conectada. Los usuarios pueden registrarse, iniciar sesión y ver una lista de otros usuarios. Pueden seleccionar un destinatario para ver el historial de mensajes y comenzar o continuar conversaciones directas. La aplicación permite el intercambio de mensajes en tiempo real de forma instantánea.",
-       
+        project3Name: "Aplicación de Pintura JavaFX",
+        project3ModalTitle: "Aplicación Moderna de Pintura JavaFX",
+        project3ModalDesc: `Esta es una aplicación de escritorio para pintar desarrollada usando Java con el framework JavaFX para la interfaz gráfica de usuario.
+                        Utiliza Maven para la construcción del proyecto y la gestión de dependencias.
+                        La aplicación proporciona funcionalidades básicas de dibujo incluyendo una herramienta de lápiz, borrador, herramientas de forma (rectángulo, óvalo), selección de color y ajuste del ancho de línea.
+                        Los usuarios pueden guardar sus creaciones como archivos de imagen PNG y cargar PNG existentes de nuevo en el lienzo.
+                        El lienzo soporta zoom y desplazamiento para una mejor navegación en dibujos grandes.`,
+        project3Req1: "Requiere Java Runtime Environment (JRE) versión 18 o superior instalado en el sistema.",
+        project3Req2: "Descarga el archivo JAR ejecutable y ejecútalo desde la línea de comandos usando: <code>java -jar TuAppName.jar</code> (reemplaza TuAppName.jar con el nombre real del archivo descargado).",
+        viewCodeBtn: "Repositorio GitHub",
+        downloadAppBtn: "Descargar JAR"
     },
     de: {
          // --- Existing Keys ---
@@ -176,6 +196,17 @@ const translations = {
         project2Name: "React-Nachrichten-App", 
         project2ModalTitle: "React-Nachrichten-App",
         project2ModalDesc: "Dies ist eine Full-Stack-Messaging-Anwendung in Echtzeit. Das Frontend wurde mit React entwickelt und nutzt eine komponentenbasierte Architektur sowie eine effiziente Zustandsverwaltung, um eine dynamische und reaktionsfähige Benutzeroberfläche bereitzustellen. Das Backend, basierend auf Node.js und Express mit Socket.IO, verwaltet WebSocket-Verbindungen für die Echtzeitkommunikation, Benutzerauthentifizierung und Nachrichtenpersistenz. Benutzerdaten, Konversationen und Nachrichten werden in einer verbundenen Datenbank gespeichert. Benutzer können sich registrieren, anmelden und eine Liste anderer Benutzer anzeigen. Sie können einen Empfänger auswählen, um den bisherigen Nachrichtenverlauf einzusehen und Direktnachrichten zu starten oder fortzusetzen. Die Anwendung unterstützt den sofortigen Nachrichtenaustausch in Echtzeit.",
+        project3Name: "JavaFX Malanwendung",
+        project3ModalTitle: "Moderne JavaFX Malanwendung",
+        project3ModalDesc: `Dies ist eine Desktop-Malanwendung, die mit Java unter Verwendung des JavaFX-Frameworks für die grafische Benutzeroberfläche entwickelt wurde.
+                            Sie verwendet Maven für die Projekterstellung und Abhängigkeitsverwaltung.
+                            Die Anwendung bietet grundlegende Zeichenfunktionen wie ein Stiftwerkzeug, Radierer, Formwerkzeuge (Rechteck, Oval), Farbauswahl und Anpassung der Linienbreite.
+                            Benutzer können ihre Kreationen als PNG-Bilddateien speichern und vorhandene PNGs wieder in die Leinwand laden.
+                            Die Leinwand unterstützt Zoomen und Verschieben (Panning) für eine bessere Navigation bei größeren Zeichnungen.`,
+        project3Req1: "Benötigt Java Runtime Environment (JRE) Version 18 oder höher auf dem System installiert.",
+        project3Req2: "Laden Sie die ausführbare JAR-Datei herunter und führen Sie sie über die Befehlszeile aus mit: <code>java -jar IhrAppName.jar</code> (ersetzen Sie IhrAppName.jar durch den tatsächlichen Namen der heruntergeladenen Datei).",
+        viewCodeBtn: "GitHub-Repository",
+        downloadAppBtn: "JAR herunterladen"
          
 
         

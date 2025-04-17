@@ -554,13 +554,15 @@
             </div>
         </div>
         <div class="row">
-            <!-- Proyecto 3 (sin cambios - podría modificarse igual si se necesita modal) -->
+            <!-- Proyecto 3 (MODIFICADO PARA MODAL) -->
             <div class="col-lg-3 col-md-12 mb-4">
-                <a href="#" id="project-3" target="_blank" class="d-block text-decoration-none">
-                    <div class="project" style="background-image: url('images/project-3.jpg');">
-                        <div class="project-overlay" data-lang-key="project3Name">Project 3</div>
-                    </div>
-                </a>
+                <!-- Eliminamos <a>, ponemos atributos y clase en div.project -->
+                <div class="project project-modal-trigger"
+                     style="background-image: url('images/project-3.jpg');"
+                     data-bs-toggle="modal"
+                     data-bs-target="#project3Modal">  <!-- Nuevo target -->
+                        <div class="project-overlay" data-lang-key="project3Name">JavaFX Paint App</div> <!-- Actualiza el texto si es necesario -->
+                </div>
             </div>
             <!-- Proyecto 4 (sin cambios - podría modificarse igual si se necesita modal) -->
             <div class="col-lg-9 col-md-12 mb-4">
@@ -642,6 +644,50 @@
     </div>
 </div>
 <!-- ========================= Fin Modal Proyecto 1 ========================= -->
+
+<!-- ========================= Modal para Proyecto 3 (NUEVO - Paint App) ========================= -->
+<div class="modal fade" id="project3Modal" tabindex="-1" aria-labelledby="project3ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-light">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title text-warning" id="project3ModalLabel" data-lang-key="project3ModalTitle">
+                    <i class="bi bi-palette-fill me-2"></i>Modern JavaFX Paint Application
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p data-lang-key="project3ModalDesc">
+                    This is a desktop paint application developed using Java with the JavaFX framework for the graphical user interface. It utilizes Maven for project build and dependency management. The application provides basic drawing functionalities including a pen tool, eraser, shape tools (rectangle, oval), color selection, and line width adjustment. Users can save their creations as PNG image files and load existing PNGs back into the canvas. The canvas supports zooming and panning for better navigation on larger drawings.
+                </p>
+                <h6>Requirements:</h6>
+                <ul>
+                    <li data-lang-key="project3Req1">Requires Java Runtime Environment (JRE) version 18 or higher installed on the system.</li>
+                    <li data-lang-key="project3Req2">Download the executable JAR file and run it from the command line using: <code>java -jar YourAppName.jar</code> (replace YourAppName.jar with the actual downloaded file name).</li>
+                </ul>
+                <hr class="border-secondary">
+                <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-4">
+
+                     <!-- Botón para GitHub -->
+                     <a href="https://github.com/victor202502/paint" 
+                        target="_blank" rel="noopener noreferrer" class="btn btn-outline-warning">
+                         <i class="bi bi-github me-2"></i><span data-lang-key="viewCodeBtn">GitHub Repository</span>
+                     </a>
+
+                     <!-- Botón para Descargar el JAR -->
+                     <a href="downloads\todolist-1.0-SNAPSHOT.jar" 
+                        download="PaintApp-Executable.jar" 
+                        class="btn btn-outline-warning">
+                         <i class="bi bi-download me-2"></i><span data-lang-key="downloadAppBtn">Download JAR</span>
+                     </a>
+                </div>
+            </div>
+            <div class="modal-footer border-secondary">
+                 <!-- Puedes añadir un botón de cierre extra aquí si quieres -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ========================= Fin Modal Proyecto 3 ========================= -->
 
 
 
