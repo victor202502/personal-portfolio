@@ -566,9 +566,12 @@
             </div>
             <!-- Proyecto 4 (sin cambios - podría modificarse igual si se necesita modal) -->
             <div class="col-lg-9 col-md-12 mb-4">
-                <a href="#" id="project-4" target="_blank" class="d-block text-decoration-none">
-                    <div class="project" style="background-image: url('images/project-4.jpg');">
-                        <div class="project-overlay" data-lang-key="project4Name">Project 4</div>
+                <div class="project project-modal-trigger"
+                style="background-image: url('images/project-4.jpg');" 
+                data-bs-toggle="modal"
+                data-bs-target="#project4Modal">  <!-- Nuevo target -->
+                   <div class="project-overlay" data-lang-key="project4Name">PHP Blog System</div> <!-- Texto del overlay -->
+          
                     </div>
                 </a>
             </div>
@@ -689,6 +692,52 @@
 </div>
 <!-- ========================= Fin Modal Proyecto 3 ========================= -->
 
+
+<!-- ========================= Modal para Proyecto 4 (NUEVO - PHP Blog) ========================= -->
+<div class="modal fade" id="project4Modal" tabindex="-1" aria-labelledby="project4ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-light">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title text-warning" id="project4ModalLabel" data-lang-key="project4ModalTitle">
+                    <i class="bi bi-file-earmark-text-fill me-2"></i>PHP Blog System
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p data-lang-key="project4ModalDesc">
+                    This is a dynamic blog application built from scratch using PHP for server-side logic and a PostgreSQL database (hosted on Neon) for data persistence. The application features user registration, login/logout functionality, and session management. Authenticated users can create, view, edit, and delete their own blog posts. All users can view posts from all authors and add comments to any post. Comment authors can also edit or delete their own comments. The project demonstrates CRUD operations, secure password hashing, user authentication, and basic database interaction with PDO.
+                </p>
+                <h6 data-lang-key="project4FeaturesTitle">Key Features:</h6>
+                <ul>
+                    <li data-lang-key="project4Feature1">User authentication (registration, login, logout) with password hashing.</li>
+                    <li data-lang-key="project4Feature2">CRUD operations for blog posts (Create, Read, Update, Delete) by post authors.</li>
+                    <li data-lang-key="project4Feature3">Public view of all posts with author information.</li>
+                    <li data-lang-key="project4Feature4">Commenting system on posts, with edit/delete capabilities for comment authors.</li>
+                    <li data-lang-key="project4Feature5">Responsive design using basic CSS, adaptable for various screen sizes.</li>
+                    <li data-lang-key="project4Feature6">Secure database interaction using PDO and prepared statements.</li>
+                    <li data-lang-key="project4Feature7">Deployed on Koyeb with an external Neon PostgreSQL database.</li>
+                </ul>
+                <hr class="border-secondary">
+                <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-4">
+                     <!-- Botón para GitHub -->
+                     <a href="https://github.com/victor202502/blog" 
+                        target="_blank" rel="noopener noreferrer" class="btn btn-outline-warning">
+                         <i class="bi bi-github me-2"></i><span data-lang-key="viewCodeBtn">GitHub Repository</span>
+                     </a>
+                     <!-- Botón para el Proyecto Desplegado -->
+                     <a href="https://popular-alameda-victor202502-d7ba3b65.koyeb.app/" 
+                        target="_blank" rel="noopener noreferrer" class="btn btn-outline-warning">
+                         <i class="bi bi-box-arrow-up-right me-2"></i><span data-lang-key="viewProjectBtn">Open Blog</span>
+                     </a>
+                </div>
+            </div>
+            <div class="modal-footer border-secondary">
+                 <!-- Puedes añadir un botón de cierre extra aquí si quieres -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ========================= Fin Modal Proyecto 4 ========================= -->
 
 
 
