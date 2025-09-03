@@ -557,11 +557,11 @@
             <!-- Proyecto 3 (MODIFICADO PARA MODAL) -->
             <div class="col-lg-3 col-md-12 mb-4">
                 <!-- Eliminamos <a>, ponemos atributos y clase en div.project -->
-                <div class="project project-modal-trigger"
-                     style="background-image: url('images/project-1.jpg');"
-                     data-bs-toggle="modal"
-                     data-bs-target="#project3Modal">  <!-- Nuevo target -->
-                        <div class="project-overlay" data-lang-key="project3Name">JavaFX Paint App</div> <!-- Actualiza el texto si es necesario -->
+                    <div class="project project-modal-trigger"
+                    style="background-image: url('images/project-1.jpg');"
+                    data-bs-toggle="modal"
+                    data-bs-target="#project3Modal">  <!-- Nuevo target -->
+                    <div class="project-overlay" data-lang-key="project3Name">JavaFX Paint App</div> <!-- Actualiza el texto si es necesario -->
                 </div>
             </div>
             <!-- Proyecto 4 (sin cambios - podría modificarse igual si se necesita modal) -->
@@ -570,12 +570,25 @@
                 style="background-image: url('images/project-4.jpg');" 
                 data-bs-toggle="modal"
                 data-bs-target="#project4Modal">  <!-- Nuevo target -->
-                   <div class="project-overlay" data-lang-key="project4Name">PHP Blog System</div> <!-- Texto del overlay -->
-          
-                    </div>
-                </a>
+                <div class="project-overlay" data-lang-key="project4Name">PHP Blog System</div> <!-- Texto del overlay -->
+                
             </div>
-        </div>
+        </a>
+    </div>
+</div>
+<div class="row">
+<!-- ========================= Proyecto 5 (NUEVO - Rental AI App) ========================= -->
+<div class="col-lg-9 col-md-12 mb-4">
+    <!-- Card/preview del proyecto -->
+    <div class="project project-modal-trigger"
+         style="background-image: url('images/project-5.jpg');"
+         data-bs-toggle="modal"
+         data-bs-target="#project5Modal">  
+        <div class="project-overlay" data-lang-key="project5Name">Rental AI Web App</div>
+    </div>
+</div>
+    </div>
+
     </div> <!-- Fin container interno -->
 </section>
 
@@ -753,7 +766,54 @@
     </div>
 </div>
 <!-- ========================= Fin Modal Proyecto 4 ========================= -->
+<!-- ========================= Modal para Proyecto 5 ========================= -->
+<div class="modal fade" id="project5Modal" tabindex="-1" aria-labelledby="project5ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-light">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title text-warning" id="project5ModalLabel" data-lang-key="project5ModalTitle">
+                    <i class="bi bi-house-door-fill me-2"></i>AI-Powered Rental Consultation Web App
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p data-lang-key="project5ModalDesc">
+                    This is a legal assistant web application focused on rental law, developed with Python and Streamlit. 
+                    It allows users to ask questions related to rental agreements, such as contract duration, termination 
+                    conditions, deposit regulations, and tenant/landlord obligations. The application integrates 
+                    natural language processing through LangChain and HuggingFace models, combined with Pinecone 
+                    for efficient document search. Legal documents and guidelines are processed with PDF parsing, 
+                    enabling the assistant to provide accurate, AI-powered explanations and references in real time. 
+                    The goal of the project is to offer an easy-to-use consultation tool for tenants and landlords, 
+                    ensuring clarity and accessibility in common rental situations.
+                </p>
 
+                <hr class="border-secondary">
+
+                <!-- GIF / imagen demostrativa -->
+                <div class="text-center my-3">
+                    <img src="images/assistent.gif" alt="Demo Rental AI App GIF" class="img-fluid rounded shadow">
+                </div>
+
+                <!-- Botones de acción -->
+                <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-4">
+                    <!-- Botón GitHub -->
+                    <a href="https://github.com/victor202502/asistente-legal-ia.git" 
+                       target="_blank" rel="noopener noreferrer" 
+                       class="btn btn-outline-warning">
+                        <i class="bi bi-github me-2"></i><span data-lang-key="viewCodeBtn">GitHub Repository</span>
+                    </a>
+
+                  
+                </div>
+            </div>
+            <div class="modal-footer border-secondary">
+                <!-- Botón de cierre extra opcional -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ========================= Fin Modal Proyecto 5 ========================= -->
 
 
    <!-- Contact Icons Section -->
